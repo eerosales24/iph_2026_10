@@ -89,7 +89,7 @@
 
 ### <i class="fas fa-award"></i> IP Honores
 
- ####  *La instrucción de asignación*
+ ####  *Strings y sus operaciones básicas*
 
 [Eduardo Rosales](mailto:ee.rosales24@uniandes.edu.co)
 
@@ -99,477 +99,461 @@ Universidad de los Andes
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta I
+### Strings
 
-- Para este ejemplo:
-
-```Python
-uno = 1
-pi = 3.14
-resultado = uno + pi
-```
-
-<br>
-
-- ¿Cómo se vería el diagrama Heap y Stack?
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta I - Solución
-
-- Para este ejemplo:
-
-```Python
-uno = 1
-pi = 3.14
-resultado = uno + pi
-```
-
-<br>
-
-- Así se vería el diagrama Heap y Stack:
-
-<img src="Screenshot 2025-08-09 at 9.05.13 AM.png" alt="" style="width: 35%; height: 40%; object-fit: fill">
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### ¿Cómo una variable referencia a la ubicación de un objeto?
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Instrucción de asignación (1/4)
-
-- Asocia/asigna un nombre → a una ubicación en memoria
-
-- Sintaxis: 
-```Python
-identificador = expresion
-```
-    
-
-- `identificador`: Un identificador válido en Python
-
-- `expresion`: Una expresión que produce un valor
-
-
-- Ej:
-```Python
-promedio = 1.5
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Instrucción de asignación (2/4)
-
-```Python
-promedio = 1.5
-```
-
-<br>
-
-<img src="iph/n1/img/promedio.png" alt="" style="width: 48%; height: 23%; object-fit: fill">
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Instrucción de asignación (3/4)
-
-```Python
-promedio = 1.5
-```
-
-<br>
-
-- Por simplicidad 
-	- Se dice que 
-		- A la variable '`promedio`' 
-			- _"Es igual a"_ `1.5`
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Instrucción de asignación (4/4)
-
-```Python
-promedio = 1.5
-```
-
-<br>
-
-- Una asignación es "muda"
-	- Es decir
-		- No produce ninguna salida en pantalla
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Identificador
-
-- _Nombre textual_ que se da a:
-	- Una variable
-	- Otros elementos en Python
-		- Ej: Funciones
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Reglas para identificadores en Python
-
-<br>
-
- - <a href="https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/9" target="_blank" rel="noopener noreferrer">BP-1 Usar identificadores en válidos</a>
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Palabra clave
-
-- Palabra reservada que tiene 
-	- Un significado especial en Python:
-
+- Estudiemos un nuevo tipo de dato no numérico
+	- _Cadenas de caracteres_ o strings:
 <table border="1" style="border-collapse: collapse; width: 100%; text-align: center; font-size: 20px;">
-  <tr>
-    <td><code>False</code></td>
-    <td><code>await</code></td>
-    <td><code>else</code></td>
-    <td><code>import</code></td>
-    <td><code>pass</code></td>
-  </tr>
-  <tr>
-    <td><code>None</code></td>
-    <td><code>break</code></td>
-    <td><code>except</code></td>
-    <td><code>in</code></td>
-    <td><code>raise</code></td>
-  </tr>
-  <tr>
-    <td><code>True</code></td>
-    <td><code>class</code></td>
-    <td><code>finally</code></td>
-    <td><code>is</code></td>
-    <td><code>return</code></td>
-  </tr>
-  <tr>
-    <td><code>and</code></td>
-    <td><code>continue</code></td>
-    <td><code>for</code></td>
-    <td><code>lambda</code></td>
-    <td><code>try</code></td>
-  </tr>
-  <tr>
-    <td><code>as</code></td>
-    <td><code>def</code></td>
-    <td><code>from</code></td>
-    <td><code>nonlocal</code></td>
-    <td><code>while</code></td>
-  </tr>
-  <tr>
-    <td><code>assert</code></td>
-    <td><code>del</code></td>
-    <td><code>global</code></td>
-    <td><code>not</code></td>
-    <td><code>with</code></td>
-  </tr>
-  <tr>
-    <td><code>async</code></td>
-    <td><code>elif</code></td>
-    <td><code>if</code></td>
-    <td><code>or</code></td>
-    <td><code>yield</code></td>
-  </tr>
-</table>
-
-- En el curso, estudiaremos varias palabras clave...
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Ejemplos de identificadores válidos
-
-```Plaintext
-PI
-promedio
-velocidad_maxima
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Ejemplos de identificadores inválidos
-
-- 3variable → empieza con **dígito**
-
-- -mi_variable → empieza con **guión**
-
-- mi variable → contiene un **espacio**
-
-- True → usa una **palabra clave**
-
-- mi$variable → contiene un **carácter especial**
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta II
-
-
-- ¿Cuáles de los siguientes son identificadores **inválidos**?
-	 - first_name
-	 - my-var
-	 - 2times
-	 - from
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta II - Solución
-
-- my-var
-	- No puede contener guión `-`
-		- Solo puede contener guiones bajos `_`
-- 2times
-	- No puede comenzar con un número
-- from
-	- No puede ser una palabra clave
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Variables: Declarar y luego usar (1/3)
-
-<br>
-
-- ¿Cuál es el resultado de ejecutar la siguiente instrucción?
-
-	<br>
-
-	```Python
-	promedio = promedio +  1
-	```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Variables: Declarar y luego usar (2/3)
-
-- ¿Cuál es el resultado de ejecutar la siguiente expresión?
-
-
-	```Python
-	promedio = promedio +  1
-	```
-
-<br>
-
-- **Respuesta:**
-
-```Plaintext
-Traceback (most recent call last):
-
-    Cell In[...], line …
-
-        promedio =  promedio + 1  
-NameError: name 'promedio' is not defined
-```
-
-<br>
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Errores en Python
-
-
-- <a href="https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/8" target="_blank" rel="noopener noreferrer">NameError</a>
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Constantes
-
-- Variables que 
-	- No deben modificarse 
-		- Durante la ejecución del programa
-
-	<br>
-
-- Convención:
-	- Se escriben en **mayúsculas**
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Constantes - Ejemplos
-
-```Python
-PI = 3.14159
-
-TASA_FIJA = 0.08
-
-ALTURA_MAXIMA = 21.1
-
-IVA = 0.19
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Comentario (1/4)
-
-- ¿Qué es esto en Python?
-```python
-# Pendiente asignar
-```
-
-<br>
-
-- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Es un **comentario**
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Comentario (2/4)
-
--  Texto que IPython (Intérprete de Python)
-	- **Ignora completamente**
-		- Inicia con  → Numeral: 
-			- **`#`**
-
-	<br>
-
-```python
-# Esto es un comentario
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Comentario (3/4)
-
-
-- Nota legible solo para humanos
-- Utilizado principalmente para
-	- Explicar el código **a otros humanos**
-
-	<br>
-
-```python
-# Esto solo lo leen los humanos
-# Los comentarios nunca son interpretados por IPython
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Comentario (4/4)
-
-
-```Python
-2 + 2  # → 4
-```
-
-<br>
-
-- En IP Honores, por convención
-	- Las salidas o resultados en las presentaciones
-		- Se muestran usando comentarios
-		- Ej:  **`# → 4`**
-			- Indica el resultado de **`2 + 2`**
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Hay asignaciones que incluyen una operación
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Asignaciones con operador
-
--   Combinación de operador y  asignación:
-
-<table border="1" style="border-collapse: collapse; width: 90%; text-align: center; font-size: 20px; padding: 8px;">
   <thead style="background-color: #d0e6f8;">
     <tr>
-      <th style="color: black; padding: 4px;">Operador</th>
-      <th style="color: black; padding: 4px;">Descripción</th>
-      <th style="color: black; padding: 4px;">Ejemplo</th>
-      <th style="color: black; padding: 4px;">Equivalente</th>
+      <th style="color: black;">Nombre</th>
+      <th style="color: black;">Tipo</th>
+      <th style="color: black;">Ejemplos</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding: 4px;"><code>+=</code></td>
-      <td style="padding: 4px;">Suma y asignación</td>
-      <td style="padding: 4px;"><code>x += 5</code></td>
-      <td style="padding: 4px;"><code>x = x + 5</code></td>
+      <td>Entero</td>
+      <td><code>int</code></td>
+      <td><code>0</code>, <code>1</code>, <code>-2</code>, <code>1_000</code></td>
     </tr>
     <tr>
-      <td style="padding: 4px;"><code>-=</code></td>
-      <td style="padding: 4px;">Resta y asignación</td>
-      <td style="padding: 4px;"><code>x -= 5</code></td>
-      <td style="padding: 4px;"><code>x = x - 5</code></td>
+      <td>Decimal</td>
+      <td><code>float</code></td>
+      <td><code>.0</code>, <code>3.14</code>, <code>3.14e-10</code></td>
     </tr>
     <tr>
-      <td style="padding: 4px;"><code>*=</code></td>
-      <td style="padding: 4px;">Multiplicación y asignación</td>
-      <td style="padding: 4px;"><code>x *= 5</code></td>
-      <td style="padding: 4px;"><code>x = x * 5</code></td>
-    </tr>
-    <tr>
-      <td style="padding: 4px;"><code>/=</code></td>
-      <td style="padding: 4px;">División y asignación</td>
-      <td style="padding: 4px;"><code>x /= 5</code></td>
-      <td style="padding: 4px;"><code>x = x / 5</code></td>
-    </tr>
-    <tr>
-      <td style="padding: 4px;"><code>//=</code></td>
-      <td style="padding: 4px;">División entera y asignación</td>
-      <td style="padding: 4px;"><code>x //= 5</code></td>
-      <td style="padding: 4px;"><code>x = x // 5</code></td>
-    </tr>
-    <tr>
-      <td style="padding: 4px;"><code>%=</code></td>
-      <td style="padding: 4px;">Módulo y asignación</td>
-      <td style="padding: 4px;"><code>x %= 5</code></td>
-      <td style="padding: 4px;"><code>x = x % 5</code></td>
-    </tr>
-    <tr>
-      <td style="padding: 4px;"><code>**=</code></td>
-      <td style="padding: 4px;">Exponenciación y asignación</td>
-      <td style="padding: 4px;"><code>x **= 5</code></td>
-      <td style="padding: 4px;"><code>x = x ** 5</code></td>
+      <td><strong>Cadena de caracteres</strong></td>
+      <td><code><strong>str</strong></code></td>
+      <td style="color: green;"><code><strong>"Hello World"</strong></code></td>
     </tr>
   </tbody>
 </table>
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-###  Pregunta III
+### Strings - `str`
 
-- ¿Cuál es el valor retornado en cada línea y el valor asignado a `resultado` al final?
-	- Asuma la **ejecución secuencial** de cada línea
+- Secuencia de caracteres
+	- Admiten letras, números, espacios, signos de puntuación, etc.
+	
+	<br>
+	
+- La secuencia está encerrada entre comillas:
+	- Simples: **`''`**
+	- Dobles: **`""`**
+	- Triples: **`''''''`** ó  **`""""""`**
+		- Se usan únicamente para documentación...
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta I
+
+- ¿Cuál es el resultado de ejecutar la siguiente expresión?
+```Python
+type(0.0)
+```
+
+
+<br>
+
+- **Respuesta**:
+	- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->`float`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta II
+
+- ¿Cuál es el resultado de ejecutar la siguiente expresión?
+```Python
+type('0.0')
+```
+
+
+<br>
+
+- **Respuesta**:
+	- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->`str`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta III
+
+- ¿Cuál es el resultado de ejecutar la siguiente expresión?
+```Python
+type('')
+```
+
+<br>
+
+- **Respuesta**:
+	- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->`str`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta IV
+
+- ¿Cuál es el resultado de ejecutar la siguiente expresión?
+```Python
+type("")
+```
+
+<br>
+
+- **Respuesta**:
+	- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->`str`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta V
+
+- ¿Cuál es el resultado de ejecutar la siguiente expresión?
+```Python
+type('.0')
+```
+
+<br>
+
+- **Respuesta**:
+	- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->`str`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta VI
+
+- ¿Cuál es el resultado de ejecutar la siguiente expresión?
+```Python
+type('IP Honores')
+```
+
+<br>
+
+- **Respuesta**:
+	- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->`str`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Estudiemos las operaciones básicas de los strings
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Símbolo/operador `+`
+
+- En Python, el símbolo/operador **`+`** cumple varios propósitos
+
+1. Con **números**:
+	- _Suma aritmética_
+		- `primer_operando + segundo_operando` 
+			- Ej: 
+			
+	```Python
+	5 + 3  # → 8
+	```
+	<br>
+
+2. Con **strings**:
+	- _**Concatenación**_
+		- `primer_string + segundo_string` 
+			- Ej: 
+				
+	```Python
+		'Hello' + ' World'  # → 'Hello World'
+	```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  Concatenación (1/2)
+
+-   Crea un nuevo string (retorna una nueva cadena)
+	- Yuxtaponiendo los dos strings dados
+-   Sintaxis: 
+```Python
+primer_string + segundo_string
+```
+
+
+<br>
+
+-  `primer_string` y `segundo_string`
+	- Deben ser strings
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  Concatenación (2/2)
+
+-  La concatenación de strings es asociativa: 
+	- (A + B) + C = A + (B + C)
+
+-  Contrario a la suma aritmética
+	- La concatenación de strings **no es conmutativa**: 
+		- A + B ≠ B + A
+
+- La concatenación de un string vacío (**`''`** ó **`""`**)
+	- Es otro string vacío
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Concatenación - Ejemplos
 
 ```Python
-y = 2
+'' + ''  # → ''
 
-y += 2
+'A' + 'B'  # → 'AB'
 
-y *= 2
+'A' + ' ' + 'B'  # → 'A B'
 
-y -= 3
+'B' + ' ' + 'A'  # → 'B A'
 
-y //= 2
-
-resultado = y + 2
+'Cero' + 'Espacios' + 'Añadidos'  # → 'CeroEspaciosAñadidos'
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta III - Solución
+### Pregunta VII
+
+- ¿Cuál es el resultado de ejecutar lo siguiente?
+    
 
 ```Python
-y = 2  # y = 2
-
-y += 2  # y = 4 (Equivalente a: y = y + 2)
-
-y *= 2  # y = 8 (Equivalente a: y = y * 2)
-
-y -= 3  # y = 5 (Equivalente a: y = y - 3)
-
-y //= 2  # y = 2 (Equivalente a: y = y // 2)
-
-resultado = y + 2  # resultado =  2 + 2 = 4
+'Py' + 'thon' + ' ' + '3' + '.' + '13' + '.' + '6'
 ```
 
-- **Recordatorio:** 
-	- En IP Honores, por convención
-		- Las salidas o resultados en las presentaciones
-			- Se muestran usando comentarios
+
+<br>
+
+- **Respuesta**:
+    
+    - &shy;<!-- .element: class="fragment" data-fragment-index="1" -->`'Python 3.13.6'`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Símbolo/operador `*`
+
+- En Python, el símbolo/operador **`*`** cumple varios propósitos 
+
+<br>
+
+1. Con **números**:
+	- Multiplicación aritmética
+		- `primer_operando * segundo_operando`
+			- Ej:
+```Python
+5 * 3  # → 15
+```
+
+1.  Con **strings**:
+	- **Repetición**
+		- `string * número_entero`
+			- Ej:
+```
+'A' * 3  # → 'AAA'
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Repetición (1/2)
+
+-   Crea un nuevo string (retorna una nueva cadena)
+	-  Donde el string dado, se repite `n` veces
+-   Sintaxis: 
+```Python
+string * n
+```
+ó
+```Python
+n * string
+```
+
+<br>
+
+- `n` debe ser entero
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Repetición (2/2)
+
+-   La repetición de strings es conmutativa: 
+	- A * B = B * A
+
+- La repetición de un string vacío (**`''`** ó **`""`**)
+	- Es otro string vacío
+
+- Si `n` es un número cero o negativo
+	- El resultado es un string vacío
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  Repetición - Ejemplos
+
+```Python
+'.' * 3  # → '...'
+3 * '.'  # → '...'
+```
+
+<br>
+
+- Casos especiales:
+
+```Python
+'.' * 0  # → ''
+'.' * -1  # → ''
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta VII
+
+- ¿Cuál es el resultado de ejecutar lo siguiente?
+
+```python
+'Pa' + "pá" + ' ' + 'Noel dice:' + ' ' + 'Ho ' * 3
+```
+
+<br>
+
+- **Respuesta**:
+    
+    - &shy;<!-- .element: class="fragment" data-fragment-index="1" -->`'Papá Noel dice: Ho Ho Ho '`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Caracteres de Control (o Escape)
+
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: left; font-size: 20px;">
+  <thead style="background-color: #d0e6f8;">
+    <tr>
+      <th style="color: black;">Carácter</th>
+      <th style="color: black;">Nombre</th>
+      <th style="color: black;">Ejemplo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>\\</code></td>
+      <td>Barra invertida</td>
+      <td><code>print('C:\\\Program Files\\\')</code><br># → C:\Program Files\</td>
+    </tr>
+    <tr>
+      <td><code>\'</code></td>
+      <td>Comilla sencilla</td>
+      <td><code>print('Don\'t take it')</code><br># → Don't take it</td>
+    </tr>
+    <tr>
+      <td><code>\"</code></td>
+      <td>Comilla doble</td>
+      <td><code>print("He said, \"Hello!\"")</code><br># → He said, "Hello!"</td>
+    </tr>
+    <tr>
+      <td><code>\\n</code></td>
+      <td>Cambio de línea</td>
+      <td><code>print('Line 1\\nLine 2')</code><br># → Line 1<br># → Line 2</td>
+    </tr>
+    <tr>
+      <td><code>\\t</code></td>
+      <td>Tabulador</td>
+      <td><code>print('Title:\\tMr.')</code><br># → Title: &nbsp;&nbsp;&nbsp;&nbsp; Mr.</td>
+    </tr>
+    <tr>
+      <td><code>\\</code></td>
+      <td>Salto de línea<br>(permite cadenas de varias líneas)</td>
+      <td><code>texto = 'Es \\<br> una sola línea'<br>print(texto) # → Es una sola línea</code></td>
+    </tr>
+  </tbody>
+</table>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta VIII
+
+- ¿Cuál es el resultado de ejecutar lo siguiente?
+```python
+print("Ella dijo: \"hola\".")
+```
+
+	<br>
+
+-  **Respuesta**:
+    
+    - &shy;<!-- .element: class="fragment" data-fragment-index="1" --> `Ella dijo: "hola".`
+
+
+<br>
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Explicación:**
+	- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->La comillas dobles internas
+		- Se escapan con  `\`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta IX
+
+- ¿Cuál es el resultado de ejecutar lo siguiente?
+```python
+print("Ella dijo: 'hola'.")
+```
+
+	<br>
+
+-  **Respuesta**:
+    
+    - &shy;<!-- .element: class="fragment" data-fragment-index="1" --> `Ella dijo: 'hola'.`
+
+
+<br>
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Explicación:**
+	- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->El string está delimitado
+		- Por comillas dobles `""`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta X
+
+
+- ¿Cuál es el resultado de ejecutar lo siguiente?
+```python
+print('Ella dijo: \'hola\'.')
+```
+
+	<br>
+
+-  **Respuesta**:
+    
+    - &shy;<!-- .element: class="fragment" data-fragment-index="1" --> `Ella dijo: 'hola'.`
+
+
+<br>
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Explicación:**
+	- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->La comillas sencillas internas
+		- Se escapan con  `\`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta XI
+
+- ¿Cuál es el resultado de ejecutar lo siguiente?
+```python
+print('Ella dijo: "hola".')
+```
+
+	<br>
+
+-  **Respuesta**:
+    
+    - &shy;<!-- .element: class="fragment" data-fragment-index="1" --> `Ella dijo: "hola".`
+
+
+<br>
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Explicación:**
+	- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->El string está delimitado
+		- Por comillas sencillas `''`
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 <i class="fas fa-question-circle fa-2x fa-spin fa-4x"></i>
+
 
 <br>
 <br>
