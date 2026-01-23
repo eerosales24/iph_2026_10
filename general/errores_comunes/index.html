@@ -107,16 +107,17 @@ Doug Linder
 
 ### Índice
 
-- [Error y Excepción](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/2)
-- [SyntaxError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/3)
-- [NameError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/7)
-- [ValueError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/10)
-- [TypeError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/13)
-- [ZeroDivisionError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/17)
-- [Error lógico](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/21)
-- [IndexError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/29)
-- [KeyError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/33)
-- [RecursionError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/38)
+- [Error y Excepción](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/3)
+- [SyntaxError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/4)
+- [NameError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/8)
+- [ValueError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/11)
+- [TypeError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/14)
+- [IndentationError.](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/18)
+- [ZeroDivisionError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/21)
+- [Error lógico](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/25)
+- [IndexError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/33)
+- [KeyError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/37)
+- [RecursionError](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/42)
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -419,6 +420,74 @@ Los operandos de la concatenación deben ser strings
 
 ```Python
 'Result: ' + '5'
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  `IndentationError`
+
+- Excepción → Cuando la indentación del código
+	- No cumple con las reglas sintácticas de Python
+- En Python, la indentación **no es opcional**
+	- Define el inicio y fin de los bloques de código
+- Ayuda: [IndentationError](https://docs.python.org/3/library/exceptions.html#IndentationError)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### `IndentationError` - Ejemplo
+
+```Python
+def suma(primer_operando: int, segundo_operando: int) -> int:
+return primer_operando + segundo_operando
+```
+
+
+
+<div class="callout callout-color7">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-bolt" ></i>
+
+
+</div>
+<div class="callout-title-inner">
+
+Error
+
+</div>
+</div>
+<div class="callout-content">
+
+Se esperaba un bloque de código indentado
+
+</div>
+</div>
+<!-- .element: style="width: 80%; font-size: 24px; transform: rotate(0deg)" -->
+
+- En Python, la indentación **define los bloques de código**
+	- Si una línea no está correctamente indentada
+		- Se produce un `IndentationError`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Solucionando un `IndentationError`
+
+- ¿Cómo se soluciona el siguiente error?
+
+```Python
+def suma(primer_operando: int, segundo_operando: int) -> int:
+return primer_operando + segundo_operando
+# IndentationError: expected an indented block
+```
+
+<br>
+
+- **Indentar correctamente el bloque:**
+
+```Python
+def suma(primer_operando: int, segundo_operando: int) -> int:
+    return primer_operando + segundo_operando
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
