@@ -767,6 +767,61 @@ IVA = 0.19
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
+### Convenciones sobre comentarios (1/4)
+
+Según la convención [PEP 8 Style](https://peps.python.org/pep-0008/#comments)
+
+- Comentarios de una sola línea:
+	- Comienzan con `#` seguido de texto
+	- Pueden contener caracteres especiales
+	- Ej:
+```Python
+# Comentario de una sola línea
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Convenciones sobre comentarios (2/4)
+
+- Comentarios de una sola línea:
+	- Cuando están al frente de código
+		- Se colocan a dos espacios de código
+	- Ej:
+
+```Python
+3.1416  # Valor de PI
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Convenciones sobre comentarios (3/4))
+
+- Comentarios en bloque:
+	- Agrupación de múltiples comentarios
+	- Cada uno empezando con `#`
+		- Se puede usar indentación
+
+- Ej:
+
+```Python
+   # Primera línea de un comentario en bloque
+   # Segunda línea
+   #     Tercera línea
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Convenciones sobre comentarios (4/4)
+
+- Moderación: 
+	- Evite el exceso de comentarios
+		- Deteriora la legibilidad
+- Claridad: 
+	- Comente segmentos significativos/complejos de código
+		- ❌ Explicar el código línea a línea
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
 ### Hay asignaciones que incluyen una operación
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
@@ -876,27 +931,11 @@ resultado = y + 2  # resultado =  2 + 2 = 4
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Variables - Buenas prácticas relacionadas
+### Buenas prácticas de variables
 
+<br>
 
-- Las siguientes [buenas prácticas](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/) le aplican a las variables
-	- Las estudiará en **N1-L1:**
-
-		 - <a href="https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/3" target="_blank" rel="noopener noreferrer">BP-1 Usar identificadores en válidos</a>
-		- <a href="https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/6" target="_blank" rel="noopener noreferrer">BP-2 Usar indentificadores autoexplicativos</a>
-		- <a href="https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/7" target="_blank" rel="noopener noreferrer">BP-3 Usar indentificadores concisos</a>
-		- <a href="https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/8" target="_blank" rel="noopener noreferrer">BP-4 Usar snake_case en identificadores</a>
-		- <a href="https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/9" target="_blank" rel="noopener noreferrer">BP-5 Usar la convención de constantes</a>
-		- <a href="https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/11" target="_blank" rel="noopener noreferrer">BP-6 Declarar variables antes de usarlas</a>
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Comentarios - Buenas prácticas relacionadas
-
-- La siguiente [buena práctica](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/) le aplica a los comentarios
-	- La estudiará en **N1-L1:**
-
-		 - <a href="https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/12" target="_blank" rel="noopener noreferrer">BP-7 Usar la convención de comentarios</a>
+ - <a href="https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/3" target="_blank" rel="noopener noreferrer">Buenas prácticas de variables</a>
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
