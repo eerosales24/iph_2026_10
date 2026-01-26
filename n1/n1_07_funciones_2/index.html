@@ -148,7 +148,7 @@ max(abs(-10), pow(3, 2))
 
 
 ```python
-# Máximo entre abs(-10) y pow(3, 2): 
+# Máximo entre abs(-10) y 3**2: 
 max(abs(-10), pow(3, 2))  # → 10
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
@@ -215,6 +215,7 @@ round(float(9 / 2), 2)  # → 4.5
 - **Nota:** A pesar de redondear a dos cifras
 	- El cero adicional a la derecha
 		- No es considerado por Python
+			- Porque no es significativo
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -222,41 +223,45 @@ round(float(9 / 2), 2)  # → 4.5
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Ejecución de un programa en Python
+### Ejecución de un programa en Python (1/2)
 
-- `main()` se **llama → se apila** su frame
+- Python no tiene una función  implícita
     
-- Ejecuta en la **cima del stack**
+- El archivo `.py` es el punto de entrada
     
-- Llama funciones → **se apilan** nuevos frames
+- El código fuera de funciones 
+	- Se ejecuta directamente por IPython
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ejecución de un programa en Python (2/2)
+
+- Inicio del programa  → Stack vacío
+
+- Si se llama a funciones → **Se apilan** nuevos frames
     
-- Funciones terminan → **se desapilan**
+- Funciones terminan → **Se desapilan**
     
-- `main()` termina → **se desapila**
-    
-- Stack vacío → **fin del programa**
+- Stack vacío → **Fin del programa**
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 Para este ejemplo:
 ```python
-# Tipo de str(75):
 type(str(abs(-50) + 25))  # → str
 ```
 
-Intente imaginar cómo se vería el Stack (**simplificado**):
+- Así ser vería el Stack (**simplificado**):
 
 ```plaintext
 # Inicio del programa
 
-APILA main()
-APILA abs(-50)
-DESAPILA abs() -> 50
-APILA str(50 + 25)
-DESAPILA str() -> '75'
-APILA type('75')
-DESAPILA type() -> str
-DESAPILA main() -> str
+APILA: abs(-50)
+DESAPILA: abs() -> 50
+APILA: str(50 + 25)
+DESAPILA: str() -> '75'
+APILA: type('75')
+DESAPILA: type() -> str
 
 # Fin del programa
 ```
@@ -266,25 +271,67 @@ DESAPILA main() -> str
 ### Ejemplo de composición y Stack simplificado
 
 ```python
-# Tipo de str(75):
 type(str(abs(-50) + 25))  # → str
 ```
 
+<img src="Screenshot 2026-01-26 at 7.44.00 AM 1.png" alt="" style="object-fit: scale-down">
 
-<img src="Screenshot 2026-01-25 at 1.59.27 PM.png" alt="" style="object-fit: scale-down">
+<!-- .element: style="width: 60%; height: 55%" -->
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### `None`
-    
-- Palabra clave que representa la ausencia de valor o **valor nulo**
-- En Python, `None` es una constante
-	- **Constante (repaso)**: 
-		- Tipo de variable cuyo valor no está destinado a cambiar 
-			- Después de ser declarado
-    
-- `None` es el valor retornado implícitamente 
-	- Si la función no retorna explícitamente otro valor
+### Pregunta V
+
+Para este ejemplo:
+```python
+resultado = round(min(pow(3, 2), 1) / 3, 2)
+print(resultado)  # → 0.33
+```
+
+<br>
+	
+- Intente imaginar cómo se vería el Stack (simplificado)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta VI - Solución (1/2)
+
+Para este ejemplo:
+```python
+resultado = round(min(pow(3, 2), 1) / 3, 2)
+print(resultado)  # → 0.33
+```
+
+- Así ser vería el Stack (**simplificado**):
+
+```plaintext
+# Inicio del programa
+
+APILA: pow(3, 2)
+DESAPILA: pow() -> 9
+
+APILA: min(9, 1)
+DESAPILA: min() -> 1
+
+APILA: round(1 / 3, 2)
+DESAPILA: round() -> 0.33
+
+APILA: print(0.33)
+DESAPILA: print() -> None
+
+# Fin del programa
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pregunta VI - Solución (2/2)
+
+```python
+resultado = round(min(pow(3, 2), 1) / 3, 2)
+print(resultado)  # → 0.33
+```
+
+<img src="Screenshot 2026-01-26 at 8.14.52 AM.png" alt="" style="width: 70%; height: 65%; object-fit: fill">
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
