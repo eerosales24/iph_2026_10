@@ -152,7 +152,7 @@ Universidad de los Andes
 	- Estarán basados en N1-PROY:
 		1. **Último quiz de Nivel 1**<!-- .element: class="fragment highlight-red" -->
 		2.  **Examen de Nivel**<!-- .element: class="fragment highlight-red" -->
-			- N1-EXAM
+			- **N1-EXAM**
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -1273,6 +1273,73 @@ Got:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
+### ¿Cómo indicar una **tarea pendiente** en el código?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### TODOs (comentarios) (1/3)
+
+- Marcan una sección que requiere ser completada
+
+- Sirve como recordatorio de tareas pendientes
+
+- La descripción debe ser concisa y clara
+
+- Formato:
+```Python
+# TODO: Aquí la descripción de la tarea.
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### TODOs (comentarios) (2/3)
+
+- Numerar los `TODOs`
+	- Útil para organizarlos
+- Ej:  
+
+	
+```Python
+# TODO 1: Descripción (concisa y clara) de la tarea 1.
+
+# TODO 2: Descripción (concisa y clara) de la tarea 2.
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### TODOs - Ejemplo
+
+```Python
+def suma(num1: int, num2: int) -> int:
+    # TODO1: Agregar aquí la documentación de la función suma().
+	
+    return num1 + num2
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### TODOs (comentarios) (3/3)
+
+- En el proyecto de Nivel 1 (**N1-PROY**)
+	- Se usan `TODOs` para indicar tareas que deben completarse
+		- Siguen este estilo:
+
+```python
+    # TODO 1: Implemente la función tal y como se describe en la documentación.
+    
+    ...
+    
+    # TODO 9: Implemente la función tal y como se describe en la documentación.
+
+```
+
+<br>
+
+- Note que están numerados
+	- Y **deben** completarse en ese orden numérico ascendente
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
 ###  Actividad III (1/2)
 
 1. Vaya a Bloque Neón
@@ -1297,13 +1364,13 @@ Got:
 
 <br>
 
-2. Cree y ejecute los doctests
-	- Si falla alguno, corrija su implementación o doctests
+2. Complete el `TODO1` y ejecute los 5 doctests ya dados
+	- Si falla alguno, corrija su implementación
 
 <br>
 
 3. Luego, implemente las demás funciones de N1-PROY
-	- Y cree las 3 consolas requeridas
+	- Y cree la consola requerida
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -1319,6 +1386,8 @@ Got:
 
 - **Fecha límite:**
 	- Febrero **13** , **9:00am**
+		- Ese día a las 9:30am será **N1-EXAM**<!-- .element: class="fragment highlight-red" -->
+		-
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
