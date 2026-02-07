@@ -619,13 +619,13 @@ def volumen_cilindro(radio_base: float, altura: float) -> float:
 ### BP-16 Usar líneas cortas
 
 - Según la convención [PEP 8 Style](https://peps.python.org/pep-0008/#naming-conventions)
-	- Líneas Máximo → 79 caracteres
+	- Líneas máximo de → 79 caracteres
 
 <br>
 
 
 - En el curso
-	- Ideal hasta 100 caracteres máximo
+	- Ideal 100 caracteres máximo
 
 	<br>
 - Esto:
@@ -711,11 +711,12 @@ def volumen_cilindro(radio_base: float, altura: float) -> float:
 - [BP-20 Usar nombres interrogativos en funciones booleanas](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/38)
 - [BP-21 Retornar directamente expresiones booleanas](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/40)
 - [BP-22 Usar operadores relacionales compuestos](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/43)
-- [BP-23 Nunca interrumpir un condicional con un return](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/44)
-- [BP-24 Usar is al comparar con None](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/46)
-- [BP-25 No usar  is e is not con literales](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/48)
-- [BP-26: Usar min() y max() de forma segura](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/49)
-- [BP-27: Usar validaciones seguras para métodos de str](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/50)
+- [BP-23 Nunca interrumpir un condicional](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/44)
+- [BP-24 Comparar correctamente con None](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/46)
+- [BP-25 Comparar correctamente con literales](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/48)
+- [BP-26 Usar min() y max() de forma segura](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/49)
+- [BP-27 Usar validaciones seguras para métodos de str](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/50)
+- [BP-28 Validar llaves de diccionarios](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/52)
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -824,10 +825,10 @@ x < y < z
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-23 Nunca interrumpir un condicional con un `return` (1/2)
+### BP-23 Nunca interrumpir un condicional (1/2)
 
 - No interrumpir un condicional
-	- Con la instrucción `return` (u otras)
+	- Con la instrucción `return` (u otras: `continue`, `break`, `exit`, etc.)
 - Ej:
 
 ```Python
@@ -843,7 +844,7 @@ def resultado_examen(puntuacion: float) -> str:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-23 Nunca interrumpir un condicional con un `return` (2/2)
+### BP-23 Nunca interrumpir un condicional (2/2)
 
 - ❌ Interrumpir un condicional
 	- Con la instrucción `return` (u otras)
@@ -862,7 +863,7 @@ def resultado_examen(puntuacion: float) -> str:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-24  Usar `is` al comparar con `None` (1/2)
+### BP-24  Comparar correctamente con `None` (1/2)
 
 
 - Se debe usar `is`al comparar con `None` 
@@ -880,7 +881,7 @@ x == None
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-24  Usar `is` al comparar con `None` (2/2)
+### BP-24  Comparar correctamente con `None` (2/2)
 
 - Ser debe usar `is not` al comparar desigualdad con `None` 
 - Ej:
@@ -897,7 +898,7 @@ x != None
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-25 No usar  `is` e `is not` con literales
+### BP-25 Comparar correctamente literales
 
 - No usar `is`  e  `is not` 
 	- Con valores literales
@@ -919,7 +920,7 @@ x is True
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-26: Usar `min()` y `max()` de forma segura
+### BP-26 Usar `min()` y `max()` de forma segura
 
 - Considerar el caso de **secuencias vacías** al usar `min()` o `max()`
 	- Usar `default` para evitar [`ValueError`](https://eerosales24.github.io/iph_2026_10/general/errores_comunes/#/11) 
@@ -950,7 +951,7 @@ max(lista)  # ValueError
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-27: Usar validaciones seguras para métodos de `str` (1/2)
+### BP-27 Usar validaciones seguras para métodos de `str` (1/2)
 
 - Considerar que algunos métodos de `str` 
 	- Retornan `False` cuando se llaman sobre un **string vacío** 
@@ -971,7 +972,7 @@ max(lista)  # ValueError
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-27: Usar validaciones seguras para métodos de `str` (2/2)
+### BP-27 Usar validaciones seguras para métodos de `str` (2/2)
 
 - Para evitar errores lógicos silenciosos
 	- Se recomienda validar antes si el string está vacío
@@ -986,6 +987,41 @@ if nombre and nombre.isalpha():
 else:
     print("Nombre inválido")
 ```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### BP-28 Validar llaves de diccionarios (1/2)
+
+- Evitar acceder directamente con `dic[llave]` 
+	- Si la llave podría no existir.
+  - ❌ `edad = datos["edad"]`  # puede lanzar KeyError
+
+	<br>
+
+- ✅  Verificar la existencia de la clave con `in`.
+ 
+    ```python
+    if "edad" in datos:
+        edad = datos["edad"]
+    ```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### BP-28 Validar llaves de diccionarios (2/2)
+
+- ✅ Usar `get()` para obtener un valor seguro si la llave no existe
+
+    ```python
+    edad = datos.get("edad")  # retorna None si no existe
+    ```
+
+	<br>
+
+- ✅  Usar `get()` con valor por defecto para evitar manejar `None`
+   
+    ```python
+    edad = datos.get("edad", 0)  # retorna 0 si no existe
+    ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
