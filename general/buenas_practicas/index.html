@@ -898,7 +898,7 @@ x != None
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-25 Comparar correctamente literales
+### BP-25 Comparar correctamente con literales
 
 - No usar `is`  e  `is not` 
 	- Con valores literales
@@ -930,7 +930,7 @@ x is True
 
 ```python
 cadena = ""
-lista = []
+diccionario = {}
 ```
 
 <br>
@@ -938,7 +938,7 @@ lista = []
 ✅ Seguro:
 ```python
 min(cadena, default='N/A')
-max(lista, default='N/A')
+max(diccionario, default='N/A')
 ```
 
 <br>
@@ -946,7 +946,7 @@ max(lista, default='N/A')
  ❌ Inseguro:
 ```python
 min(cadena)  # ValueError
-max(lista)  # ValueError
+max(diccionario)  # ValueError
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
@@ -998,18 +998,18 @@ else:
 
 	<br>
 
-- ✅  Verificar la existencia de la clave con `in`.
+- ✅  Verificar la existencia de la llave con `in`:
  
-    ```python
-    if "edad" in datos:
+```python
+    if "edad" in datos:  # Ingresa solo si la llave "edad" existe en `datos`
         edad = datos["edad"]
-    ```
+```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### BP-28 Validar llaves de diccionarios (2/2)
 
-- ✅ Usar `get()` para obtener un valor seguro si la llave no existe
+- ✅ Usar `get()` para obtener un valor seguro si la llave no existe:
 
     ```python
     edad = datos.get("edad")  # retorna None si no existe
@@ -1017,7 +1017,7 @@ else:
 
 	<br>
 
-- ✅  Usar `get()` con valor por defecto para evitar manejar `None`
+- ✅  Usar `get()` con valor por defecto para evitar manejar `None`:
    
     ```python
     edad = datos.get("edad", 0)  # retorna 0 si no existe
