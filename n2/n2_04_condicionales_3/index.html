@@ -531,7 +531,7 @@ x <= 10 and (y > 5 or z == 0) and w != 7
 - ¿Cómo se podría reescribir esta función para remover la lógica negativa innecesaria, usando las Leyes de Morgan?
 
  ```Python
-def es_al_menos_uno_true(a: bool, b: bool, c: bool):
+def es_al_menos_uno_true(a: bool, b: bool, c: bool) -> bool:
     return not (not a and not b and not c)
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
@@ -540,7 +540,7 @@ def es_al_menos_uno_true(a: bool, b: bool, c: bool):
 ### Pregunta IX - Solución
 
 ```Python[3,4]
-def es_al_menos_uno_true(a: bool, b: bool, c: bool):
+def es_al_menos_uno_true(a: bool, b: bool, c: bool) -> bool:
     return a or b or c
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
