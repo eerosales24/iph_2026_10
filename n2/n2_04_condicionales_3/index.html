@@ -494,7 +494,12 @@ not (a == 10 and b != 3)
 ### Pregunta VII - Solución
 
 ```Python
-a != 10 or c == 3
+
+# Anterior:
+not (a == 10 and b != 3)
+
+# Solución:
+a != 10 or b == 3
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
@@ -512,6 +517,10 @@ not (x > 10 or (y <= 5 and z != 0) or w == 7)
 ### Pregunta VIII - Solución
 
 ```Python
+# Anterior:
+not (x > 10 or (y <= 5 and z != 0) or w == 7)
+
+# Solución:
 x <= 10 and (y > 5 or z == 0) and w != 7
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
