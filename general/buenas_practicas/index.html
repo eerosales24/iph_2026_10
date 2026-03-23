@@ -1030,27 +1030,33 @@ else:
 
 ### Buenas prácticas que aplican desde Nivel 3
 
-- [BP-29: Definir el caso base](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/55)
+- [BP-29 Definir el caso base](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/55)
 
-- [BP-30: Converger al caso base](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/56)
+- [BP-30 Converger al caso base](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/56)
 
-- [BP-31: Usar una variable de control para `while`](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/58)
+- [BP-31 Usar una variable de control para `while`](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/58)
 
-- [BP-32 Usar nombres de variables autoexplicativos al iterar](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/64)
+- [BP-32 Usar nombres de variables autoexplicativos al iterar](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/61)
 
+- [BP-33 No remover elementos durante un recorrido](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/64)
 
-- [BP-33 No remover elementos durante un recorrido](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/67)
+- [BP-34 Validaciones seguras de métodos de `list`](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/67)
 
+- [BP-35 Evitar pasar y modificar mutables en funciones](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/72)
 
-- En construcción...
+- [BP-36 Evitar uso innecesario de `readline()`](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/74)
 
+- [BP-37 Acceder de forma segura a estructuras compuestas](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/75)
 
+- [BP-38 Usar `for-in` cuando no se necesite procesar índices](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/80)
 
-<!-- .slide: class="has-light-background" data-background-color="#f8f8f8" -->
+- [BP-39 Usar  el patrón de recorrido adecuado](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/81)
+
+- [BP-40 Nunca interrumpir un ciclo](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/82)
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-29: Definir el caso base
+### BP-29 Definir el caso base
 
 - El caso base → obligatorio:
 	- Detiene la recursión
@@ -1064,7 +1070,7 @@ else:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-30: Converger al caso base (1/2)
+### BP-30 Converger al caso base (1/2)
 
 - Toda función recursiva debe estar diseñada 
 	- Para que cada llamada 
@@ -1077,7 +1083,7 @@ else:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-30: Converger al caso base (2/2)
+### BP-30 Converger al caso base (2/2)
 
 
 - Si no hay avance hacia el o los → casos base
@@ -1088,7 +1094,7 @@ else:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-31: Usar una variable de control para `while` (1/3)
+### BP-31 Usar una variable de control para `while` (1/3)
 
 - Toda instrucción `while` debe tener **una variable de control** que:
 	- Se inicialice correctamente
@@ -1103,7 +1109,7 @@ while i < 5:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-31: Usar una variable de control para `while` (2/3)
+### BP-31 Usar una variable de control para `while` (2/3)
 
 - Si la instrucción `while` no maneja adecuadamente la variable de control
 	- El ciclo podría ejecutarse indefinidamente
@@ -1120,7 +1126,7 @@ while i >= 0:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-31: Usar una variable de control para `while` (3/3)
+### BP-31 Usar una variable de control para `while` (3/3)
 
 - Todo `while` debe estar diseñado para que eventualmente:
     - Su condición evalúe a `False`
@@ -1265,7 +1271,7 @@ print('Resultado:', lista)  # → Resultado: [5]
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-34: Validaciones seguras de métodos de `list` (1/5)
+### BP-34 Validaciones seguras de métodos de `list` (1/5)
 
 - Considerar que algunos métodos de `list` 
 	- Que generar errores cuando  
@@ -1285,7 +1291,7 @@ print('Resultado:', lista)  # → Resultado: [5]
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-34: Validaciones seguras de métodos de `list` (2/5)
+### BP-34 Validaciones seguras de métodos de `list` (2/5)
 
 - Para evitar estos errores
 	- Se recomienda validar antes si el elemento existe y/o no está vacía
@@ -1313,7 +1319,7 @@ if i < len(lista):
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-34: Validaciones seguras de métodos de `list` (3/5)
+### BP-34 Validaciones seguras de métodos de `list` (3/5)
 
 - `list.insert()`
 	- No genera error con la lista vacía
@@ -1327,7 +1333,7 @@ lista.insert(10_000, 'x')  # → ['x']
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-34: Validaciones seguras de métodos de `list` (4/5)
+### BP-34 Validaciones seguras de métodos de `list` (4/5)
 
 - `list.sort()`
 	- No genera error con la lista vacía
@@ -1341,7 +1347,7 @@ lista.sort()  # → []
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-34: Validaciones seguras de métodos de `list` (5/5)
+### BP-34 Validaciones seguras de métodos de `list` (5/5)
 
 - `list.sort()`
 	- En general no se debe usar con distintos tipos de datos
@@ -1353,7 +1359,7 @@ lista.sort()  # → []
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-35: Evitar pasar y modificar mutables en funciones (1/2)
+### BP-35 Evitar pasar y modificar mutables en funciones (1/2)
 
 - Evitar pasar mutables (Ej: listas o diccionarios) como argumentos
 	- A no ser que se necesite 
@@ -1368,7 +1374,7 @@ procesar_datos(datos.copy())  # En lugar de procesar_datos(datos)
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-35: Evitar pasar y modificar mutables en funciones (2/2)
+### BP-35 Evitar pasar y modificar mutables en funciones (2/2)
 
 - Evitar modificar mutables dentro de una función
 	- A no ser que se necesite 
@@ -1384,7 +1390,7 @@ def procesar_sin_modificar(data: list) -> list:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-36: Evitar uso innecesario de `readline()`
+### BP-36 Evitar uso innecesario de `readline()`
 
 - Evitar el uso innecesario de `readline()` en ciclos
 	- Preferir iterar directamente sobre el archivo usando `for`
@@ -1577,7 +1583,7 @@ for letra_actual in texto:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-40: Nunca interrumpir un ciclo (1/5)
+### BP-40 Nunca interrumpir un ciclo (1/5)
 
 - Cuando se desea recorrer una estructura hasta encontrar una condición
 	- En el curso se debe usar el patrón de **recorrido parcial**
@@ -1585,7 +1591,7 @@ for letra_actual in texto:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-40: Nunca interrumpir un ciclo (2/5)
+### BP-40 Nunca interrumpir un ciclo (2/5)
 
 - Ejemplo correcto – **Con centinela**
 
@@ -1609,7 +1615,7 @@ def buscar(lista: list, valor: int) -> int:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-40: Nunca interrumpir un ciclo (3/5)
+### BP-40 Nunca interrumpir un ciclo (3/5)
 
 - Ejemplo correcto – **Sin centinela**
 
@@ -1632,7 +1638,7 @@ def buscar(lista: list, valor: int) -> int:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-40: Nunca interrumpir un ciclo (4/5)
+### BP-40 Nunca interrumpir un ciclo (4/5)
 
 - Ejemplo **incorrecto** – Interrumpir el ciclo con `return`
 
@@ -1650,15 +1656,21 @@ def buscar(lista: list, valor: int) -> int:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### BP-40: Nunca interrumpir un ciclo (5/5)
+### BP-40 Nunca interrumpir un ciclo (5/5)
 
 - En el curso NO se estudian las siguientes instrucciones:
 	- ~~`break`~~
 	- ~~`continue`~~
 	- ~~`exit`~~
 
-- Usar estas instrucciones para interrumpir condicionales o ciclos
-	- Se considera una **mala práctica de programación**
+- Usar estas instrucciones 
+	- O similares
+		- para interrumpir condicionales o ciclos
+			- Es una **mala práctica de programación**
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Fin de las prácticas de Nivel 3
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
