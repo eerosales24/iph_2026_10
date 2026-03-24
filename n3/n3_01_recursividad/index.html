@@ -556,19 +556,19 @@ def factorial(n: int) -> int:
 ### Construcción (9/10)
 
 ```python
-def factorial(numero):
+def factorial(n: int) -> int:
     """
     Calcula el factorial de un número (n!).
 
     Args:
-        numero (int): El número positivo para calcular su factorial.
+        n (int): El número positivo para calcular su factorial.
 
     Returns:
         int: El factorial del número proporcionado.
     """
     # Aserciones de validación del parámetro:
-    assert isinstance(numero, int), "El número debe ser un entero"
-    assert numero >= 0, "El número debe ser positivo o cero"
+    assert isinstance(n, int), "El número debe ser un entero"
+    assert n >= 0, "El número debe ser positivo o cero"
 ```
 
 - Note que la aserciones 
@@ -604,8 +604,8 @@ def factorial(n: int) -> int:
     >>> factorial(5)  # Caso recursivo - 5
     120
     """
-    assert isinstance(numero, int), "El número debe ser un entero"
-    assert numero >= 0, "El número debe ser positivo o cero"
+    assert isinstance(n, int), "El número debe ser un entero"
+    assert nu >= 0, "El número debe ser positivo o cero"
     
     return 1 if n <= 1 else n * factorial(n - 1)
 ```
