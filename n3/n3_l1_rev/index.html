@@ -107,9 +107,9 @@ Universidad de los Andes
 	<br>
 
 2. Afianzar la comprensión de los métodos de los strings
-	- Afianzar la compresión del uso de indexamiento y slicing en strings
+	- Afianzar la compresión del uso de **indexamiento y slicing en strings**
 	- Afianzar la comprensión de f-strings
-	- Comprender parámetros opcionales
+	- Comprender **parámetros opcionales**
 <br>
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
@@ -141,7 +141,7 @@ Universidad de los Andes
 
 ### Quiz I - N3
 
-- El próximo martes tendremos el primer quiz de N3
+- El martes 7 de abril tendremos el primer quiz de N3
 	- El tema estará relacionado
 		- Con los **ejercicios en este laboratorio** <!-- .element: class="fragment highlight-red" -->
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
@@ -169,7 +169,10 @@ Universidad de los Andes
 ###  Actividad I (1/3)
 
 - Cree un archivo llamado: `logica.py`
-	- Copie y pegue el siguiente código e implemente el `TODO1`:
+	- Copie y pegue el siguiente código
+	- Escriba un plan de implementación paso a paso 
+		- **Antes** de  implementar el `TODO1`
+	- Una vez su plan sea concreto, proceda a codificar la solución
 
 
 ```python
@@ -213,7 +216,10 @@ def suma_digitos(n: int) -> int:
 ###  Actividad I (2/3)
 
 - En: `logica.py`
-	- Copie y pegue el siguiente código e implemente el `TODO2`:
+	-  Copie y pegue el siguiente código
+	- Escriba un plan de implementación paso a paso 
+		- **Antes** de  implementar el `TODO2`
+	- Una vez su plan sea concreto, proceda a codificar la solución
 	- Tip: Use string slicing:
 		- `cadena[1:]`
 
@@ -271,10 +277,17 @@ def contar_vocales_recursivo(cadena: str) -> int:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
+### Aclaración: En los siguientes ejercicios, NO DEBE usar recursividad
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
 ###  Actividad II (1/9)
 
-En: `logica.py`
-	- Copie y pegue el siguiente código e implemente el `TODO3`:
+- En: `logica.py`
+	- Copie y pegue el siguiente código
+	- Escriba un plan de implementación paso a paso 
+		- **Antes** de  implementar el `TODO3`
+	- Una vez su plan sea concreto, proceda a codificar la solución
 
 ```python
 import doctest
@@ -308,8 +321,11 @@ def es_palindrome_basico(cadena: str) -> bool:
 
 ###  Actividad II (2/9)
 
-- En `logica.py`
-	- Copie y pegue el siguiente código e implemente el `TODO2`:
+- En: `logica.py`
+	- Copie y pegue el siguiente código
+	- Escriba un plan de implementación paso a paso 
+		- **Antes** de  implementar el `TODO4`
+	- Una vez su plan sea concreto, proceda a codificar la solución
 
 ```python
 def es_palindrome_ignora_mayusculas(cadena: str) -> bool:
@@ -379,8 +395,11 @@ es_palindrome_3("Oso", True)
 
 ###  Actividad II (3/9)
 
-- En `logica.py`
-	- Copie y pegue el siguiente código e implemente el `TODO5`:
+- En: `logica.py`
+	- Copie y pegue el siguiente código
+	- Escriba un plan de implementación paso a paso 
+		- **Antes** de  implementar el `TODO5`
+	- Una vez su plan sea concreto, proceda a codificar la solución
 
 ```python
 def es_palindromo_configurable(cadena: str, sensible_mayusculas: bool=False) -> bool:
@@ -419,11 +438,14 @@ def es_palindromo_configurable(cadena: str, sensible_mayusculas: bool=False) -> 
 
 ###  Actividad II (4/9)
 
-- En `logica.py`:
-	- Copie y pegue el siguiente código e implemente el `TODO6`:
+- En: `logica.py`
+	- Copie y pegue el siguiente código
+	- Escriba un plan de implementación paso a paso 
+		- **Antes** de  implementar el `TODO6`
+	- Una vez su plan sea concreto, proceda a codificar la solución
 
 ```python
-def es_palindromo_sin_espacios(cadena: str, sensible_mayusculas: bool=False) -> bool:
+def es_palindromo_ignorando_espacios(cadena: str, sensible_mayusculas: bool=False) -> bool:
     """
     Verifica si un string es un palíndromo, esto es, si se lee igual en ambos
     sentidos. Se puede especificar si la verificación es sensible a mayúsculas 
@@ -438,32 +460,35 @@ def es_palindromo_sin_espacios(cadena: str, sensible_mayusculas: bool=False) -> 
     Returns:
         bool: True si el string es un palíndromo, False en caso contrario.
         
-    >>> es_palindromo_sin_espacios('Wow', True)  # Caso no es palíndromo (no ignora mayúscula inicial)
+    >>> es_palindromo_ignorando_espacios('Wow', True)  # Caso no es palíndromo (no ignora mayúscula inicial)
     False
-    >>> es_palindromo_sin_espacios('Wow')  # Caso es palíndromo (ignora mayúscula inicial)
+    >>> es_palindromo_ignorando_espacios('Wow')  # Caso es palíndromo (ignora mayúscula inicial)
     True
-    >>> es_palindromo_sin_espacios('radar')  # Caso es palíndromo
+    >>> es_palindromo_ignorando_espacios('radar')  # Caso es palíndromo
     True
-    >>> es_palindromo_sin_espacios('1234')  # Caso es palíndromo (número)
+    >>> es_palindromo_ignorando_espacios('1234')  # Caso es palíndromo (número)
     False
-    >>> es_palindromo_sin_espacios('anita lava la tina')  # Caso es palíndromo (ignorando espacios)
+    >>> es_palindromo_ignorando_espacios('anita lava la tina')  # Caso es palíndromo (ignorando espacios)
     True
-    >>> es_palindromo_sin_espacios('La ruta nos aporto otro paso natural')  # Caso es palíndromo (ignorando espacios)
+    >>> es_palindromo_ignorando_espacios('La ruta nos aporto otro paso natural')  # Caso es palíndromo (ignorando espacios)
     True
-    >>> es_palindromo_sin_espacios('La ruta nos aporto otro paso natural, True')  # Caso no es palíndromo (no ignora mayúscula inicial)
+    >>> es_palindromo_ignorando_espacios('La ruta nos aporto otro paso natural, True')  # Caso no es palíndromo (no ignora mayúscula inicial)
     False
     """
     # TODO6: Implemente la función tal y como se describe en la documentación
 
-#doctest.run_docstring_examples(es_palindromo_sin_espacios, globals(), verbose=True)
+#doctest.run_docstring_examples(es_palindromo_ignorando_espacios, globals(), verbose=True)
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ###  Actividad II (5/9)
 
-- En `logica.py`
-	- Copie y pegue el siguiente código e implemente el `TODO7`:
+- En: `logica.py`
+	- Copie y pegue el siguiente código
+	- Escriba un plan de implementación paso a paso 
+		- **Antes** de  implementar el `TODO7`
+	- Una vez su plan sea concreto, proceda a codificar la solución
 
 ```python
 def es_palindromo_configurable_espacios(cadena: str, sensible_mayusculas: bool = False, ignorar_espacios: bool = True) -> bool:
@@ -508,8 +533,11 @@ def es_palindromo_configurable_espacios(cadena: str, sensible_mayusculas: bool =
 
 ###  Actividad II (6/9)
 
-- En `logica.py`
-	- Copie y pegue el siguiente código e implemente el `TODO8`:
+- En: `logica.py`
+	- Copie y pegue el siguiente código
+	- Escriba un plan de implementación paso a paso 
+		- **Antes** de  implementar el `TODO8`
+	- Una vez su plan sea concreto, proceda a codificar la solución
 
 ```python
 def es_correo_uniandes(email: str, min_usuario: int=4) -> bool:
@@ -563,8 +591,11 @@ def es_correo_uniandes(email: str, min_usuario: int=4) -> bool:
 
 ###  Actividad II (7/9)
 
-- En `logica.py`
-	- Copie y pegue el siguiente código e implemente el `TODO9`:
+- En: `logica.py`
+	- Copie y pegue el siguiente código
+	- Escriba un plan de implementación paso a paso 
+		- **Antes** de  implementar el `TODO9`
+	- Una vez su plan sea concreto, proceda a codificar la solución
 
 ```python
 def ocultar_usuario_email(email: str, caracteres_visibles: int=2) -> str:
@@ -600,8 +631,11 @@ def ocultar_usuario_email(email: str, caracteres_visibles: int=2) -> str:
 
 ###  Actividad II (8/9)
 
-- En `logica.py`
-	- Copie y pegue el siguiente código e implemente el `TODO10`:
+- En: `logica.py`
+	- Copie y pegue el siguiente código
+	- Escriba un plan de implementación paso a paso 
+		- **Antes** de  implementar el `TODO10`
+	- Una vez su plan sea concreto, proceda a codificar la solución
 
 ```python
 def formatear_numero_telefono(numero: str, formato: str = "NACIONAL") -> str:
@@ -629,7 +663,7 @@ def formatear_numero_telefono(numero: str, formato: str = "NACIONAL") -> str:
     >>> formatear_numero_telefono("1234567890", "OTRO")  # Caso formato no reconocido
     '1234567890'
     """
-    # TODO10: Implemente la función tal y como se describe en la documentación
+    # TODO 10: Implemente la función tal y como se describe en la documentación
 
 #doctest.run_docstring_examples(formatear_numero_telefono, globals(), verbose=True)
 ```
@@ -644,7 +678,7 @@ def formatear_numero_telefono(numero: str, formato: str = "NACIONAL") -> str:
 	<br>
 
 2. Si una función no cumple las anteriores buenas prácticas
-	- Por favor corrija su implementación
+	- Por favor **corrija su implementación**
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
