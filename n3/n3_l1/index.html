@@ -107,7 +107,7 @@ Universidad de los Andes
 	<br>
 
 2. Afianzar la comprensión de los métodos de los strings
-	- Afianzar la compresión del uso de **indexamiento y slicing en strings**
+	- Afianzar la compresión del uso de **indexamiento** y **string slicing**
 	- Afianzar la comprensión de f-strings
 	- Comprender **parámetros opcionales**
 <br>
@@ -134,8 +134,7 @@ Universidad de los Andes
 
 - Si no termina el laboratorio
 	- Debe finalizarlo (**y comprenderlo**) 
-		- En las 5h
-			- De trabajo individual semanal
+		- En Semana Santa...
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -143,7 +142,7 @@ Universidad de los Andes
 
 - El martes 7 de abril tendremos el primer quiz de N3
 	- El tema estará relacionado
-		- Con los **ejercicios en este laboratorio** <!-- .element: class="fragment highlight-red" -->
+		- Con los **temas en este laboratorio** <!-- .element: class="fragment highlight-red" -->
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
@@ -170,9 +169,7 @@ Universidad de los Andes
 
 - Cree un archivo llamado: `logica.py`
 	- Copie y pegue el siguiente código
-	- Escriba un plan de implementación paso a paso 
-		- **Antes** de  implementar el `TODO1`
-	- Una vez su plan sea concreto, proceda a codificar la solución
+	- Codifique el plan de implementación paso a paso  que hizo ayer
 
 
 ```python
@@ -201,27 +198,33 @@ def suma_digitos(n: int) -> int:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Aclaración
+### Ejemplo de plan de implementación:
 
-- La implementación recursiva se crea
-	- Solo con fines de práctica
+- Validar que `n` sea `int` y `n >= 0`
 
-- No es eficiente para valores grandes de `n`
+- ¿Qué operaciones necesito?
+	- Obtener último dígito: `n % 10`
+	- Remover el  último dígito: `n // 10` 
     
-- Próximamente estudiaremos una versión **iterativa** y eficiente
-    - De la función `suma_digitos()`
+- **Caso base:**
+	- si `n < 10`, retornar `n`
+    
+- **Caso recursivo:**	
+	- Algoritmo:
+		- Sumar el último dígito al procesamiento recursivo del resto
+			- `(n % 10) + suma_digitos(n // 10)`
+    
+	- Verificación:
+		- `n // 10` reduce el valor de `n`  
+			-  ✅ Eventualmente se alcanza el caso base
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ###  Actividad I (2/3)
 
 - En: `logica.py`
-	-  Copie y pegue el siguiente código
-	- Escriba un plan de implementación paso a paso 
-		- **Antes** de  implementar el `TODO2`
-	- Una vez su plan sea concreto, proceda a codificar la solución
-	- Tip: Use string slicing:
-		- `cadena[1:]`
+	- Copie y pegue el siguiente código
+	- Codifique el plan de implementación paso a paso  que hizo ayer
 
 ```python
 def contar_vocales_recursivo(cadena: str) -> int:
@@ -253,6 +256,19 @@ def contar_vocales_recursivo(cadena: str) -> int:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
+### Aclaración
+
+- Las implementaciones recursivas previas
+	- Se usan solo con fines de práctica
+
+	<br>
+
+- Estas no son eficientes para valores grandes
+    
+	- Próximamente estudiaremos versiones **iterativas** y eficientes
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
 ###  Actividad I (3/3)
 
 1. Revise si sus funciones cumplen con las siguientes buenas prácticas obligatorias del curso:
@@ -264,7 +280,7 @@ def contar_vocales_recursivo(cadena: str) -> int:
 
 	<br>
 
-2. Si una función no cumple todas las anteriores buenas prácticas
+2. Si una función no cumple las anteriores buenas prácticas
 	- Por favor corrija su implementación
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
