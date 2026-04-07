@@ -1097,21 +1097,22 @@ else:
 ### BP-31 Usar una variable de control para `while` (1/3)
 
 - Toda instrucción `while` debe tener **una variable de control** que:
-	- Se inicialice correctamente
-	- Se actualice dentro del cuerpo del ciclo
+	1. Se inicialice correctamente
+	2.  Se actualice dentro del cuerpo del ciclo
+	3.  **Termine el ciclo**
 	- Ej:
 ```python
 i = 0
 while i < 5:
     print(i)
-    i += 1  # Actualización necesaria
+    i += 1  # Actualización que terminará el ciclo
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
 ### BP-31 Usar una variable de control para `while` (2/3)
 
-- Si la instrucción `while` no maneja adecuadamente la variable de control
+- Si la variable de control no termina el ciclo
 	- El ciclo podría ejecutarse indefinidamente
 		- Y podría lanzarse un [`MemoryError`](https://docs.python.org/3/library/exceptions.html#MemoryError) o un [OverflowError](https://docs.python.org/3/library/exceptions.html#OverflowError)
 	- Ej:
@@ -1120,7 +1121,8 @@ i = 0
 while i >= 0:
     print(i)
     # Este incremento erróneo de la variable de control
-    # Impide que el ciclo termine:
+    # Impide que el ciclo termine
+    # i siempre será mayor o igual a 0
     i += 999_999_999
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
@@ -1131,11 +1133,11 @@ while i >= 0:
 - Todo `while` debe estar diseñado para que eventualmente:
     - Su condición evalúe a `False`
 		- Para prevenir bucles infinitos accidentales
-		- Ej:
+- Este es un ejemplo en donde la variable de control no cumple ningún propósito:
 ```python
-i = 0
+i = 0 
 while True:  # Ciclo infinito
-    print(i)
+    print(i) # i nunca se cambia
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">

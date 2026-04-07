@@ -557,6 +557,7 @@ while i >= 0:
 
 - La variable de control `i`  solo se incrementa    
     - Entonces `i >= 0` siempre evalúa a `True`
+    - Es decir, la variable de control **no cumple su objetivo**
 - A esto se le denomina
     - *Ciclo/Bucle infinito*
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
@@ -582,7 +583,7 @@ while var:
     var = True
 ```
 
-- La variable de control siempre es `True`
+- La variable de control siempre es `True` y por ende **no cumple su objetivo**
     - Entonces `while` siempre se ejecuta
 - A esto se le denomina
     - *Ciclo/Bucle infinito*
@@ -808,6 +809,8 @@ else:
 ### Pregunta XII
 
 - ¿Qué hace el siguiente código?
+
+**Nota:** Aquí se usa una variable de control (`intentos`) y un centinela (pin_guardado`)
 
 ```Python
 intentos = 3

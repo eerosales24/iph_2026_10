@@ -525,7 +525,7 @@ string[start: end :step]  # Slide notation [:]
 ```Python
 'user@abc.co'[:]  # → 'user@abc.co'
 # start = 0
-# stop = 11  # (Fin de la cadena)
+# end = Fin de la cadena
 # step = 1  # (Se mueve de uno en uno, hacia adelante)
 ```
 
@@ -548,7 +548,7 @@ string[start: end :step]  # Slide notation [:]
 ```Python
 'user@abc.co'[:4]  # → 'user'
 # start = 0
-# stop = 4  # (Excluyente)
+# end = 4  # (Excluyente)
 # step = 1  # (Se mueve de uno en uno, hacia adelante)
 ```
 
@@ -571,7 +571,7 @@ string[start: end :step]  # Slide notation [:]
 ```Python
 'user@abc.co'[5:8]  # → 'abc'
 # start = 5
-# stop = 8  # (Excluyente)
+# end = 8  # (Excluyente)
 # step = 1  # (Se mueve de uno en uno, hacia adelante)
 ```
 
@@ -584,7 +584,7 @@ string[start: end :step]  # Slide notation [:]
 ```Python
 'oc.cba@resu'[::-1]  # → 'user@abc.co'
 # start = -11  # Inicio de la cadena
-# stop = 0  # Fin de la cadena
+# end = Fin de la cadena
 # step = -1  # Se mueve de uno en uno, hacia *atrás*
 ```
 
