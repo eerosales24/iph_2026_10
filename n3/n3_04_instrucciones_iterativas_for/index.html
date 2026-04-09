@@ -879,6 +879,175 @@ n
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
+### ¿Cómo sabe `for` cuando terminar de iterar un iterable?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 🌀 **¿Qué es un iterable?** 🌀
+
+- Un objeto que puede ser recorrido 
+	- De elemento en elemento
+		- Ej: Mediante `for`
+- Ejemplos de iterables comunes en Python:
+	- Listas, strings, diccionarios
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 🌀 ¿Qué es un iterador? 🌀
+
+- Un objeto que representa un flujo de datos (stream of data)
+- Se _consume_ elemento por elemento
+	- Sin almacenar toda la secuencia en memoria
+- Implementa el protocolo de iteración
+	- `iter()` y `next()`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  Protocolo de iteración
+
+Para que un objeto sea iterador, debe implementar:
+
+1. **`__iter__()`**:
+    - Si es un iterable, 
+	    - Retorna un nuevo iterador
+    - Si es un iterador, 
+	    - Se retorna a a sí mismo
+	    
+2. **`__next__()`**:
+    - Retorna el siguiente elemento en la secuencia
+    - Lanza **`StopIteration`** 
+	    - Cuando no hay más elementos
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## **`StopIteration`: El fin del iterador**
+
+- Excepción que se lanza automáticamente
+	- Cuando un iterador no tiene más elementos
+- Python maneja esta excepción internamente 
+	- En ciclos como `for`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ¿Cómo funciona un iterador? (1/2)
+
+- Convertir un iterable en un iterador:
+
+```python
+lista = [10, 20, 30]
+iterador = iter(lista)  # Convierte lista en iterador
+
+print(next(iterador))  # → 10
+print(next(iterador))  # → 20
+print(next(iterador))  # → 30
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ¿Cómo funciona un iterador? (2/2)
+
+- Si ya es un iterable
+	- Se retorna a sí mismo:
+	
+```python
+numeros = iter([1, 2, 3]) 
+print(iter(numeros) is numeros)  # → True (ya es un iterador)
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ¿Cómo funciona `next()`?
+
+- Retorna el siguiente elemento del iterador
+- Cuando no hay más elementos
+	- Lanza `StopIteration`
+
+```python
+iterador = iter([5, 10, 15])
+print(next(iterador))  # → 5
+print(next(iterador))  # → 10
+print(next(iterador))  # → 15
+print(next(iterador))  # → StopIteration ❌
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  `for` usa a `iter()` y `next()` (1/6)
+
+
+- Python llama a `iter(obj)`
+	- Para obtener un iterador
+- Luego, en cada iteración
+	- Llama a `next(iterador)`
+		- Para obtener el siguiente elemento
+-  Cuando `next()` lanza `StopIteration`
+	- `for` se detiene automáticamente
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  `for` usa a `iter()` y `next()` (2/6)
+
+- Ejemplo manual con un string:
+
+```python
+texto = "Hola"
+
+iterador = iter(texto)  # Se llama manualmente a iter()
+print(next(iterador))  # → 'H'
+print(next(iterador))  # → 'o'
+print(next(iterador))  # → 'l'
+print(next(iterador))  # → 'a'
+
+print(next(iterador))  # → StopIteration ❌
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  `for` usa a `iter()` y `next()` (3/6)
+
+- Ejemplo con `for` y un iterable (string):
+
+```python
+for letra in "Hola":
+    print(letra)
+```
+
+- Internamente, Python usa `iter()` y `next()` 
+	- Igual que en el ejemplo anterior
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  `for` usa a `iter()` y `next()` (4/6)
+
+<img src="eda/img/iter_protocol.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  `for` usa a `iter()` y `next()` (5/6)
+
+
+- `for` usa el protocolo de iteración (o iterador) con `iter()` y `next()`
+-  Esto ocurre automáticamente
+	- El programador no necesita llamar a `iter()` o a `next()` 
+-  `StopIteration` también se maneja automáticamente
+	- Deteniendo el ciclo cuando no hay más elementos
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### `for` usa a `iter()` y `next()` (6/6)
+ 
+- ¿Por qué `for` usa iteradores en Python?
+
+	- Flexibilidad:
+		- Puede recorrer cualquier objeto iterable
+			- Ej: `string`, `list`, `dict`, etc.
+		
+	-  Evaluación perezosa (lazy):
+		- No necesita cargar todos los elementos en memoria
+			- Solo obtiene los elementos cuando se necesitan
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
 ### Para cerrar
 
 - Revise las siguientes buenas prácticas:
