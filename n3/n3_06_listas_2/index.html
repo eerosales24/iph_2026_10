@@ -232,7 +232,7 @@ print(items)  # → ['a', 'b']
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Eliminación en listas (Repaso)
+### Eliminación en listas
 
 - Hay 3 formas más explícitas (claras) 
 	- De eliminar en listas:
@@ -385,7 +385,7 @@ print(items)  # → [a', 'a', 'a']
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Eliminación en listas (Repaso)
+### Eliminación en listas
 
 - Hay 3 formas más explícitas (claras) 
 	- De eliminar en listas:
@@ -475,7 +475,7 @@ print(item_retornado)  # → 3
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Eliminación en listas (Repaso)
+### Eliminación en listas
 
 - Hay 3 formas más explícitas (claras) 
 	- De eliminar en listas:
@@ -558,46 +558,6 @@ print(admins)  # → []
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta II
-
-- ¿Cuál es el resultado de ejecutar el siguiente código?
-
-```Python
-nums = [1, 2, 3, 3]
-var = nums.pop()
-print(nums)
-
-nums.remove(var)
-print(nums)
-
-del nums[1] 
-print(nums)
-
-nums.clear()
-print(nums)
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta II - Solución
-
-```Python
-nums = [1, 2, 3, 3]
-var = nums.pop()
-print(nums)  # → [1, 2, 3]
-
-nums.remove(var)
-print(nums)  # → [1, 2]
-
-del nums[1] 
-print(nums)  # → [1]
-
-nums.clear()
-print(nums)  # → []
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
 ### Inserción en listas (1/2)
     
 - List slicing se puede usar para insertar en listas
@@ -652,47 +612,7 @@ print(items)  # → [1, 2, 3, 4]
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta III
-
-- Complete los TODOs:
-
-```Python
-names = ['Sam', 'Ben', 'Leo']
-
-# TODO 1: Insertar 'Ian' en la posición 0
-
-
-# TODO 2: Insertar 'Anna' en la posición 1
-
-
-# TODO 3: Insertar 'Tom' en la posición 4
-
-# TODO 4: Explicar cómo se ve `names` al final
-print(names)  # → 
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta III - Solución
-
-```Python
-names = ['Sam', 'Ben', 'Leo']
-
-# TODO 1 - DONE: Insertar 'Ian' en la posición 0
-names.insert(0, 'Ian')
-
-# TODO 2 - DONE: Insertar 'Anna' en la posición 1
-names.insert(1, 'Anna')
-
-# TODO 3 - DONE: Insertar 'Tom' en la posición 4
-names.insert(4, 'Tom')
-
-print(names)  # → ['Ian', 'Anna', 'Sam', 'Ben', 'Tom', 'Leo']
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Inserción en listas (Repaso)
+### Inserción en listas
 
 - Hay 3 formas más explícitas (claras) 
 	- De insertar en listas:
@@ -737,7 +657,7 @@ print(items)  # → [1, 2, 3, [4, 5]]
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Inserción en listas (Repaso)
+### Inserción en listas
 
 - Hay 3 formas más explícitas (claras) 
 	- De insertar en listas:
@@ -828,7 +748,7 @@ items.extend(2)   # TypeError: non-iterable unsupported
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta IV
+### Pregunta II
 
 - Complete el TODO:
 
@@ -846,7 +766,7 @@ print(nums)  # → [-3, -2, -1, 0, 1, 2, 3]
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta IV - Solución
+### Pregunta II - Solución
 
 ```Python
 nums = [-3, -2, -1]
@@ -858,144 +778,6 @@ nums.append(zero)
 nums.extend(nums2)
 
 print(nums)  # → [-3, -2, -1, 0, 1, 2, 3]
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta V
-
-- Complete los TODOs:
-
-```Python
-nums = [1, 2, 3]
-nums2 = [4, 5, 6]
-# TODO 1: Crear la lista `l3` que contiene 
-# los ítems de `nums` y `nums2`
-
-print(l3)  # → [1, 2, 3, 4, 5, 6]
-# TODO 2: Agregar en sitio todos los ítems (individualmente) 
-# de `nums2` a `nums`
-
-print(nums)  # → [1, 2, 3, 4, 5, 6]
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta V - Solución
-
-```Python
-nums = [1, 2, 3]
-nums2 = [4, 5, 6]
-# TODO 1 - DONE: Crear la lista `l3` que contiene 
-# los ítems de `nums` y `nums2`
-l3 = nums + nums2
-print(l3)  # → [1, 2, 3, 4, 5, 6]
-# TODO 2 - DONE: Agregar en sitio todos los ítems (individualmente) 
-# de `nums2` a `nums`
-nums.extend(nums2)
-print(nums)  # → [1, 2, 3, 4, 5, 6]
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta VI
-
-- ¿Cuál es el resultado de ejecutar el siguiente código?
-
-```Python
-nums = [1, 2, 3, 4]
-print(nums[:2] + nums[2:])
-
-nums.insert(0, 0)
-print(nums)
-
-nums.extend([5, 6])
-print(nums)
-
-nums.append([7, 8])
-print(nums)
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta VI - Solución
-
-```Python
-nums = [1, 2, 3, 4]
-print(nums[:2] + nums[2:])  # → [1, 2, 3, 4]
-
-nums.insert(0, 0)
-print(nums)  # → [0, 1, 2, 3, 4]
-
-nums.extend([5, 6])
-print(nums)  # → [0, 1, 2, 3, 4, 5, 6]
-
-nums.append([7, 8])
-print(nums)  # → [0, 1, 2, 3, 4, 5, 6, [7, 8]]
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta VII
-
-- Complete los TODOs:
-
-```Python
-# TODO 1: Crear la lista `nums` con los ítems: 
-# 1, 1, 1, 1, 1, usando repetición de listas
-
-  
-# TODO 2: Insertar el ítem entero `1` 
-# al inicio de la lista `nums`, usando insert()
-
-  
-# TODO 3: Agregar el ítem entero `1` 
-# al final de la lista `nums`
-
-  
-# TODO 4: Remplazar el ítem del medio en `nums` 
-# por el entero `0`
-
-
-
-# TODO 5: Chequear si el entero `0` está en `nums` 
-# y si es así, imprimir su índice
-  
-
-
-print(nums)  # → [1, 1, 1, 0, 1, 1, 1]
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta VII - Solución
-
-```Python
-# TODO 1 - DONE: Crear la lista `nums` con los ítems: 
-# 1, 1, 1, 1, 1, usando repetición de listas
-nums = [1] * 5
-  
-# TODO 2 - DONE: Insertar el ítem entero `1` 
-# al inicio de la lista `nums`, usando insert()
-nums.insert(0, 1)  # nums → [1, 1, 1, 1, 1, 1]
-  
-# TODO 3 - DONE: Agregar el ítem entero `1` 
-# al final de la lista `nums`
-nums.append(1)  # nums → [1, 1, 1, 1, 1, 1, 1]
-  
-# TODO 4 - DONE: Remplazar el ítem del medio en `nums` 
-# por el entero `0`
-nums[len(nums) // 2] = 0  
-# Porque len(nums) es impar (7), entonces 7//2 = 3
-
-  
-# TODO 5 - DONE: Chequear si el entero `0` está en `nums` 
-# y si es así, imprimir su índice
-if 0 in nums:
-    print(nums.index(0))    
-    
-print(nums)  # → [1, 1, 1, 0, 1, 1, 1]```
-
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
@@ -1097,7 +879,7 @@ print(items)  # → ['z', 'abc']
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta VIII
+### Pregunta III
 
 - ¿Cuál es el resultado de ejecutar el siguiente código?
 
@@ -1115,7 +897,7 @@ print(words)
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta VIII - Solución
+### Pregunta III - Solución
 
 ```Python
 words = ["apple", "orange", "banana", "kiwi"]
@@ -1135,7 +917,7 @@ print(words)  # → ['kiwi', 'apple', 'orange', 'banana']
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Para cerrar
+### Buenas prácticas relacionadas
 
 - Revise las siguientes buenas prácticas:
 
@@ -1145,12 +927,155 @@ print(words)  # → ['kiwi', 'apple', 'orange', 'banana']
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
+### Repaso del paso de argumentos con mutables
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 🌀 Tipos de datos mutables 🌀
+
+- Un tipo de dato es mutable
+	- Si después de crearlo, se puede cambiar
+- Tipos de datos mutables vistos hasta ahora:
+	- `dict`, `list`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Paso de argumentos mutables - Ejemplo (1/3)
+
+```Python
+lista_original = [1, 2, 3, 4]
+
+def duplicar_lista(lista_original: list) -> None:
+    for i in range(len(lista_original)):
+        lista_original[i] *= 2  
+
+print(lista_original)  # → [1, 2, 3, 4]
+# `original` es un objeto mutable y una función puede cambiarlo:
+duplicar_lista(lista_original)  
+print(lista_original)  # → [2, 4, 6, 8]
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Paso de argumentos mutables - Ejemplo (2/3)
+
+```Python
+lista_original = [1, 2, 3, 4]
+
+def duplicar_lista(lista: list) -> list:
+    for i in range(len(lista)):
+        lista[i] *= 2
+    return lista  
+  
+print(lista_original)  # → [1, 2, 3, 4]
+# Aquí se pasa una copia (vía slicing) de `original`:
+nueva_lista = duplicar_lista(lista_original[:])
+print(lista_original)     # → [1, 2, 3, 4]
+print(nueva_lista)  # → [2, 4, 6, 8]
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Paso de argumentos mutables - Ejemplo (3/3)
+
+```Python
+lista_original = [1, 2, 3, 4]
+
+def duplicar_lista(lista: list) -> list:
+    for i in range(len(lista)):
+        lista[i] *= 2
+  
+print(lista_original)  # → [1, 2, 3, 4]
+nueva_lista = lista_original[:]
+# Aquí se pasa una copia (vía slicing) de `original`:
+duplicar_lista(nueva_lista)
+print(lista_original)     # → [1, 2, 3, 4]
+print(nueva_lista)  # → [2, 4, 6, 8]
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### `sorted()`
+    
+- Ordena los elementos de un iterable
+    
+- **Sintaxis**:
+```python
+sorted(iterable, key, reverse)
+```
+    
+- iterable: objeto iterable (por ejemplo, string, lista)
+    
+- key: función de un solo argumento que define la clave de comparación
+	- Opcional, por defecto `None`
+    
+- **reverse**: si es `True`, ordena en orden descendente
+	- -Opcional, por defecto `False`)
+    
+- Retorna una **nueva lista ordenada** con los elementos del iterable
+    
+- **No modifica** el iterable original (a diferencia de `list.sort(...)`)
+    
+- Ayuda: [sorted](https://docs.python.org/es/3/library/functions.html#sorted)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### `sorted()` - Ejemplos con strings
+
+```python
+s1 = 'defabc'
+l1 = sorted(s1) # l1 → ['a', 'b', 'c', 'd', 'e', 'f']  
+      
+s2 = '34012'
+l2 = sorted(s2, reverse=True) # l2 → ['4', '3', '2', '1', '0']  
+      
+s3 = 'ACbEd'
+l3 = sorted(s3, key=str.lower) # l3 → ['A', 'b', 'C', 'd', 'E']
+    
+s4 = '201bca'
+l4 = sorted(s4) # l4 → ['0', '1', '2', 'a', 'b', 'c']**
+```
+
+- Se usan nombres cortos y no auto explicativos por espacio
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### `sorted()` - Ejemplos con listas
+
+```python
+
+l1 = [1, 2, 0]
+    
+l1_sorted = sorted(l1) # l1_sorted → [0, 1, 2]
+l1_sorted = sorted(l1, reverse=True) # l1_sorted → [2, 1, 0]  
+      
+l2 = ['abc', 'z', 'xy'];     
+l2_sorted = sorted(l2, key=len) # l2_sorted → ['z', 'xy', 'abc']
+```
+
+- Errores:
+
+```python
+sorted(['a', 1]) 
+# → TypeError: '<' not supported between instances of 'int' and 'str
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Para cerrar
+
+- Revise la siguiente buenas práctica:
+
+	- - [BP-35 Evitar pasar y modificar mutables en funciones](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/72)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
 <i class="fas fa-question-circle fa-2x fa-spin fa-4x"></i>
 
 <br>
 <br>
 
- [<i class="fas fa-home  fa-3x"></i>](https://eerosales24.github.io/iph_2025_20/#)
+ [<i class="fas fa-home  fa-3x"></i>](https://eerosales24.github.io/iph_2026_10/#)
 </div></script></section></div>
     </div>
 
