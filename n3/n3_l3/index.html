@@ -1378,7 +1378,7 @@ def filtrar_correos_desde_texto(texto: str, min_usuario: int=4) -> str:
 
 
 ```python
-def contar_correos_por_dominio(texto: str, min_usuario: int=4) -> str:
+def contar_correos_por_dominio(texto: str, min_usuario: int=4) -> dict:
     """
     Recibe un string con correos separados por coma y retorna un
     diccionario con el conteo de correos por dominio.
@@ -1414,7 +1414,7 @@ def contar_correos_por_dominio(texto: str, min_usuario: int=4) -> str:
     """
     # TODO7: Implemente la función tal y como se describe en la documentación
 
-#doctest.run_docstring_examples(filtrar_correos_desde_texto, globals(), verbose=True)
+#doctest.run_docstring_examples(contar_correos_por_dominio, globals(), verbose=True)
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
