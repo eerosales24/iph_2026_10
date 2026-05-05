@@ -1672,7 +1672,56 @@ def buscar(lista: list, valor: int) -> int:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-# Fin de las prácticas de Nivel 3
+### Buenas prácticas que aplican desde Nivel 4
+
+- [BP-41: Validación segura del método `tuple.index`](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/88)
+
+- [BP-42: Usar nombres autoexplicativos para filas, columnas y elementos](https://eerosales24.github.io/iph_2026_10/general/buenas_practicas/#/89)
+
+<br>
+
+
+ En construcción...
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### BP-41: Validación segura del método `tuple.index`
+
+- `index()` lanza `ValueError` si el valor no está presente
+- Para evitar esto
+	- Se recomienda validar antes si el elemento existe y/o no está vacía
+	- Ej:
+
+```python
+if x in tupla:
+    posicion = tupla.index(x)
+```
+
+- ✅ Valida primero con el operador `in`.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### BP-42: Usar nombres autoexplicativos para filas, columnas y elementos
+
+✅ Claro:
+
+```python
+
+for fila_actual in matriz:     
+	for elemento_actual in fila_actual:         
+	...`
+```
+
+❌ Puede ser confuso:
+
+```python
+
+
+for i in matriz:     
+    for j in i:         
+    ...
+
+```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
