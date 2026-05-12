@@ -700,39 +700,6 @@ dtype: int64
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta X
-
-- ¿Cuál es el resultado de ejecutar el siguiente código?
-
-```Python
-import pandas as pd
-letras = ['a', 'b', 'c', 'd', 'e']
-serie = pd.Series(letras, index=[-1, -2, -3, -4, -5])
-# end incluido:
-print(serie.loc[-3:-5])
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-### Pregunta X - Solución
-
-```Python
-import pandas as pd
-letras = ['a', 'b', 'c', 'd', 'e']
-serie = pd.Series(letras, index=[-1, -2, -3, -4, -5])
-# end incluido:
-print(serie.loc[-3:-5])
-```
-
-```plaintext
--3    c
--4    d
--5    e
-dtype: object
-```
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
 ### `Series.to_list()`
 
 - Retorna una lista con los valores de la serie    
@@ -755,7 +722,7 @@ serie.to_list()  # → [1, 2, 3]
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta XI
+### Pregunta X
 
 - ¿Cuál es el resultado de ejecutar el siguiente código?
 
@@ -769,7 +736,7 @@ for letra in lista:
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta XI - Solución
+### Pregunta X - Solución
 
 ```Python
 import pandas as pd
@@ -807,7 +774,7 @@ print(serie is serie_copia) # → False
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta XII
+### Pregunta XI
 
 - ¿Cuál es el resultado de ejecutar el siguiente código?
 
@@ -825,7 +792,7 @@ print(serie.to_list() is serie_copia.to_list())
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta XII - Solución
+### Pregunta XI - Solución
 
 
 ```Python
@@ -995,7 +962,7 @@ dtype: int64
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta XIII
+### Pregunta XII
 
 - ¿Cuál es el resultado de ejecutar el siguiente código?
 
@@ -1009,7 +976,7 @@ print(''.join(serie.to_list()[::-1]))
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-### Pregunta XIII - Solución
+### Pregunta XII - Solución
 
 ```Python
 import pandas as pd
