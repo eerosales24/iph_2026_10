@@ -590,7 +590,7 @@ print(serie.iloc[-1])
 - Considerando **la etiqueta** del índice
 - Sintaxis: 
 ```Python
-Series.iloc[start:end]
+Series.loc[start:end]
 ```
 - `start`: Inicio por etiqueta, incluido
 - `end`: Fin por etiqueta, no incluido, opcional
@@ -968,9 +968,14 @@ dtype: int64
 
 ```Python
 import pandas as pd
+
 serie = pd.Series(['1', '2', '3', 'e', 'v', 'i', 'n', 'x'])
-serie[7] = 'U' 
-serie0, 1, 2 = ['o','s','r']
+
+serie[7] = 'U'
+serie[0] = 'o'
+serie[1] = 's'
+serie[2] = 'r'
+
 print(''.join(serie.to_list()[::-1]))
 ```
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
@@ -980,9 +985,14 @@ print(''.join(serie.to_list()[::-1]))
 
 ```Python
 import pandas as pd
+
 serie = pd.Series(['1', '2', '3', 'e', 'v', 'i', 'n', 'x'])
-serie[7] = 'U' 
-serie0, 1, 2 = ['o','s','r']
+
+serie[7] = 'U'
+serie[0] = 'o'
+serie[1] = 's'
+serie[2] = 'r'
+
 print(''.join(serie.to_list()[::-1]))
 ```
 
