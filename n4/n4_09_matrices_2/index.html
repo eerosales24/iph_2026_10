@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/iph.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/spyder.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### <i class="fas fa-award"></i> IP Honores
+
+ ####  *Matrices 2*
+
+[Eduardo Rosales](mailto:ee.rosales24@uniandes.edu.co)
+
+Departamento de Ingeniería de Sistemas y Computación
+
+Universidad de los Andes
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Validación de límites al recorrer matrices
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Idea central (1/2)
+
+- Una matriz tiene bordes
+- No todas las casillas adyacentes
+	- Existen
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Idea central (2/2)
+
+- Antes de usar una casilla
+	- Verificar que exista
+
+<br>
+
+- Esto evita errores al recorrer
+	- Filas, columnas, diagonales y vecinos
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ¿Qué significa que una casilla exista? (1/2)
+
+- Una casilla es usable:
+	- Si sus coordenadas están dentro de los límites de la matriz 
+
+<br>
+
+- **Si la fila y columna existen**
+	- Dentro de los límites de la matriz
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+###  ¿Qué significa que una casilla exista? (2/2)
+
+
+- Para una matriz de tamaño n x n:
+
+  - `fila` debe estar entre 0 y n - 1
+  - `columna` debe estar entre 0 y n - 1
+
+<br> 
+
+- Condición general:
+
+  - `0 <= fila < n`
+  - `0 <= columna < n`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ¿Por qué aparecen errores?
+
+- Python permite acceder a **posiciones**
+	- Con índices válidos
+
+	<br> 
+
+- Si una posición no existe, ocurre un error
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Error al acceder a una posición que no existe
+
+- En Python, una matriz creada con listas de listas 
+	- Puede lanzar principalmente este error:
+
+
+```python
+IndexError: list index out of range
+```
+
+
+- Ocurre cuando se intenta acceder 
+	- A una fila o columna que no existe
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ejemplo de error (1/3)
+
+```python
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+```
+
+Los índices válidos son:
+
+- Filas: `0`, `1`, `2`
+- Columnas: `0`, `1`, `2`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ejemplo de error (2/3)
+
+```python
+matriz = [
+    [1, 2, 3],  # Fila 0
+    [4, 5, 6],  # Fila 1
+    [7, 8, 9]   # Fila 2
+]
+```
+
+- Error al acceder a una fila inexistente:
+
+```python
+valor = matriz[3][0]
+```
+
+Error:
+
+```python
+IndexError: list index out of range
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ejemplo de error (3/3)
+
+```python
+matriz = [
+    [    1,              2,            3     ],
+    [    4,              5,            6     ],
+    [    7,              8,            9     ]
+]   
+       #Col 0,        #Col 1,        #Col 2
+```
+
+- Error al acceder a una columna inexistente:
+
+```python
+valor = matriz[0][3]
+```
+
+Error:
+
+```python
+IndexError: list index out of range
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ¿Cómo evitar errores en laterales?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificaciones laterales 
+
+- Para mirar la izquierda:
+
+  - `columna - 1`
+
+- Verificación **antes** de acceder:
+
+  - `columna > 0`
+
+<br>
+
+
+- Para mirar la derecha:
+
+  - `columna + 1`
+
+- Verificación **antes** de acceder:
+
+  - `columna < n - 1`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación lateral: mirar hacia la izquierda (1/2)
+
+- 🟢 Posición actual: `(2, 1)`  
+- 🔵 Posición destino a la izquierda: `(2, 0)`  
+	- ✅ Accesible
+
+```python  
+if columna > 0:  
+    valor = matriz[fila][columna - 1]
+````
+
+  
+|        | Columna 0    | Columna 1    | Columna 2 |     |
+| ------ | ------------ | ------------ | --------- | --- |
+| Fila 0 | 1 `(0,0)`    | 2 `(0,1)`    | 3 `(0,2)` |     |
+| Fila 1 | 4 `(1,0)`    | 5 `(1,1)`    | 6 `(1,2)` |     |
+| Fila 2 | 🔵 7 `(2,0)` | 🟢 8 `(2,1)` | 9 `(2,2)` |     |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación lateral: mirar hacia la izquierda (2/2)
+
+- 🟢 Posición actual: `(0, 0)`  
+- 🔵 Posición destino a la izquierda: no existe 
+	- ❌ No accesible
+  
+- En este caso, la posición actual está en la primera columna.
+
+- Por eso, si se intentara mirar hacia la izquierda:
+
+```python
+columna - 1
+```
+
+- El resultado sería:
+
+```python
+-1
+```
+
+- La condición protege el acceso:
+
+```python
+if columna > 0:
+    valor = matriz[fila][columna - 1]
+```
+
+
+|        | Columna 0    | Columna 1 | Columna 2 |
+| ------ | ------------ | --------- | --------- |
+| Fila 0 | 🟢 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)` |
+| Fila 1 | 4 `(1,0)`    | 5 `(1,1)` | 6 `(1,2)` |
+| Fila 2 | 7 `(2,0)`    | 8 `(2,1)` | 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación lateral: mirar hacia la derecha (1/2)
+  
+🟢 Posición actual: `(2, 1)`  
+🔵 Posición destino a la derecha: `(2, 2)`  
+  
+```python  
+if columna < n - 1:  
+    valor = matriz[fila][columna + 1]
+```
+
+
+||Columna 0|Columna 1|Columna 2|
+|---|---|---|---|
+|Fila 0|1 `(0,0)`|2 `(0,1)`|3 `(0,2)`|
+|Fila 1|4 `(1,0)`|5 `(1,1)`|6 `(1,2)`|
+|Fila 2|7 `(2,0)`|🟢 8 `(2,1)`|🔵 9 `(2,2)`|
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación lateral: mirar hacia la derecha (2/2)
+
+- 🟢 Posición actual: `(2, 2)`  
+- 🔵 Posición destino a la derecha: no existe
+	- ❌ No accesible
+
+- En este caso, la posición actual está en la última columna
+
+- Por eso, si se intentara mirar hacia la derecha:
+
+```python
+columna + 1
+```
+
+- El resultado sería:
+
+```python
+3
+```
+
+- La condición protege el acceso:
+
+```python
+if columna < n - 1:
+    valor = matriz[fila][columna + 1]
+```
+
+|        | Columna 0 | Columna 1 | Columna 2    |
+| ------ | --------- | --------- | ------------ |
+| Fila 0 | 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)`    |
+| Fila 1 | 4 `(1,0)` | 5 `(1,1)` | 6 `(1,2)`    |
+| Fila 2 | 7 `(2,0)` | 8 `(2,1)` | 🟢 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificaciones verticales
+
+- Para mirar arriba:
+
+	 -  `fila - 1`
+
+- Verificación **antes** de acceder:
+	- `fila > 0`
+
+
+<br>
+
+- Para mirar abajo:
+	- `fila + 1`
+
+- Verificación **antes** de acceder:
+
+  - `fila < n - 1`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación vertical: mirar hacia arriba  (1/2)
+  
+🟢 Posición actual: `(2, 1)`  
+🔵 Posición arriba: `(1, 1)`  
+  
+```python  
+if fila > 0:  
+valor = matriz[fila - 1][columna]  
+```  
+  
+| | Columna 0 | Columna 1 | Columna 2 |  
+|--------|-----------|-----------|-----------|  
+| Fila 0 | 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)` |  
+| Fila 1 | 4 `(1,0)` | 🔵 5 `(1,1)` | 6 `(1,2)` |  
+| Fila 2 | 7 `(2,0)` | 🟢 8 `(2,1)` | 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación vertical: mirar hacia arriba (2/2)
+
+- 🟢 Posición actual: `(0, 1)`  
+- 🔵 Posición destino arriba: no existe
+	- ❌ No accesible
+
+- En este caso, la posición actual está en la primera fila
+
+- Por eso, si se intentara mirar hacia arriba:
+
+```python
+fila - 1
+```
+
+- El resultado sería:
+
+```python
+-1
+```
+
+- La condición protege el acceso:
+
+```python
+if fila > 0:
+    valor = matriz[fila - 1][columna]
+```
+
+|        | Columna 0 | Columna 1    | Columna 2 |
+| ------ | --------- | ------------ | --------- |
+| Fila 0 | 1 `(0,0)` | 🟢 2 `(0,1)` | 3 `(0,2)` |
+| Fila 1 | 4 `(1,0)` | 5 `(1,1)`    | 6 `(1,2)` |
+| Fila 2 | 7 `(2,0)` | 8 `(2,1)`    | 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación vertical: mirar hacia abajo (1/2)
+
+🟢 Posición actual: `(1, 1)`  
+🔵 Posición abajo: `(2, 1)`  
+  
+```python
+if fila < n - 1:
+    valor = matriz[fila + 1][columna]
+```
+
+| | Columna 0 | Columna 1 | Columna 2 |  
+|--------|-----------|-----------|-----------|  
+| Fila 0 | 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)` |  
+| Fila 1 | 4 `(1,0)` | 🟢 5 `(1,1)` | 6 `(1,2)` |  
+| Fila 2 | 7 `(2,0)` | 🔵 8 `(2,1)` | 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación vertical: mirar hacia abajo (2/2)
+
+- 🟢 Posición actual: `(2, 1)`  
+- 🔵 Posición destino abajo: no existe
+	- ❌ No accesible
+
+- En este caso, la posición actual está en la última fila
+
+- Por eso, si se intentara mirar hacia abajo:
+
+```python
+fila + 1
+```
+
+- El resultado sería:
+
+```python
+3
+```
+
+- La condición protege el acceso:
+
+```python
+if fila < n - 1:
+    valor = matriz[fila + 1][columna]
+```
+
+|        | Columna 0 | Columna 1    | Columna 2 |
+| ------ | --------- | ------------ | --------- |
+| Fila 0 | 1 `(0,0)` | 2 `(0,1)`    | 3 `(0,2)` |
+| Fila 1 | 4 `(1,0)` | 5 `(1,1)`    | 6 `(1,2)` |
+| Fila 2 | 7 `(2,0)` | 🟢 8 `(2,1)` | 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ¿Cómo evitar errores en diagonales?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Diagonales superiores
+
+- Superior izquierda:
+
+  - `fila - 1, columna - 1`
+
+- Verificación **antes** de acceder:
+
+  - `fila > 0`
+  - `columna > 0`
+
+<br>
+
+- Superior derecha:
+
+  - `fila - 1, columna + 1`
+
+- Verificación **antes** de acceder:
+
+  - `fila > 0`
+  - `columna < n - 1`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación diagonal: mirar hacia arriba a la izquierda (1/2)
+
+🟢 Posición actual: `(2, 1)`  
+🔵 Posición superior izquierda: `(1, 0)`  
+  
+```python
+if fila > 0 and columna > 0:
+    valor = matriz[fila - 1][columna - 1]
+```
+
+| | Columna 0 | Columna 1 | Columna 2 |  
+|--------|-----------|-----------|-----------|  
+| Fila 0 | 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)` |  
+| Fila 1 | 🔵 4 `(1,0)` | 5 `(1,1)` | 6 `(1,2)` |  
+| Fila 2 | 7 `(2,0)` | 🟢 8 `(2,1)` | 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación diagonal: mirar hacia arriba a la izquierda (2/2)
+
+- 🟢 Posición actual: `(0, 0)`  
+- 🔵 Posición destino superior izquierda: no existe
+	- ❌ No accesible
+
+- En este caso, la posición actual está en la primera fila y en la primera columna
+
+- Por eso, si se intentara mirar hacia arriba a la izquierda:
+
+```python
+fila - 1
+columna - 1
+```
+
+- El resultado sería:
+
+```python
+-1
+-1
+```
+
+- La condición protege el acceso:
+
+```python
+if fila > 0 and columna > 0:
+    valor = matriz[fila - 1][columna - 1]
+```
+
+|        | Columna 0    | Columna 1 | Columna 2 |
+| ------ | ------------ | --------- | --------- |
+| Fila 0 | 🟢 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)` |
+| Fila 1 | 4 `(1,0)`    | 5 `(1,1)` | 6 `(1,2)` |
+| Fila 2 | 7 `(2,0)`    | 8 `(2,1)` | 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación diagonal: mirar hacia arriba a la derecha (1/2)
+
+🟢 Posición actual: `(2, 1)`  
+🔵 Posición superior derecha: `(1, 2)`  
+  
+```python
+if fila > 0 and columna < n - 1:
+    valor = matriz[fila - 1][columna + 1]
+```
+
+| | Columna 0 | Columna 1 | Columna 2 |  
+|--------|-----------|-----------|-----------|  
+| Fila 0 | 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)` |  
+| Fila 1 | 4 `(1,0)` | 5 `(1,1)` | 🔵 6 `(1,2)` |  
+| Fila 2 | 7 `(2,0)` | 🟢 8 `(2,1)` | 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación diagonal: mirar hacia arriba a la derecha (2/2)
+
+- 🟢 Posición actual: `(0, 2)`  
+- 🔵 Posición destino superior derecha: no existe
+	- ❌ No accesible
+
+- En este caso, la posición actual está en la primera fila y en la última columna.
+
+- Por eso, si se intentara mirar hacia arriba a la derecha:
+
+```python
+fila - 1
+columna + 1
+```
+
+- El resultado sería:
+
+```python
+-1
+3
+```
+
+- La condición protege el acceso:
+
+```python
+if fila > 0 and columna < n - 1:
+    valor = matriz[fila - 1][columna + 1]
+```
+
+|        | Columna 0 | Columna 1 | Columna 2    |
+| ------ | --------- | --------- | ------------ |
+| Fila 0 | 1 `(0,0)` | 2 `(0,1)` | 🟢 3 `(0,2)` |
+| Fila 1 | 4 `(1,0)` | 5 `(1,1)` | 6 `(1,2)`    |
+| Fila 2 | 7 `(2,0)` | 8 `(2,1)` | 9 `(2,2)`    |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Diagonales inferiores
+
+- Inferior izquierda:
+
+  - `fila + 1, columna - 1`
+
+- Verificación **antes** de acceder:
+
+  - `fila < n - 1`
+  - `columna > 0`
+
+<br>
+
+- Inferior derecha:
+
+  - `fila + 1, columna + 1`
+
+- Verificación **antes** de acceder:
+
+  - `fila < n - 1`
+  - `columna < n - 1`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación diagonal: mirar hacia abajo a la izquierda (1/2)
+
+🟢 Posición actual: `(1, 1)`  
+🔵 Posición inferior izquierda: `(2, 0)`  
+  
+```python
+if fila < n - 1 and columna > 0:
+    valor = matriz[fila + 1][columna - 1]
+```
+
+| | Columna 0 | Columna 1 | Columna 2 |  
+|--------|-----------|-----------|-----------|  
+| Fila 0 | 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)` |  
+| Fila 1 | 4 `(1,0)` | 🟢 5 `(1,1)` | 6 `(1,2)` |  
+| Fila 2 | 🔵 7 `(2,0)` | 8 `(2,1)` | 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación diagonal: mirar hacia abajo a la izquierda (2/2)
+
+- 🟢 Posición actual: `(2, 0)`  
+- 🔵 Posición destino inferior izquierda: no existe
+	- ❌ No accesible
+
+- En este caso, la posición actual está en la última fila y en la primera columna.
+
+- Por eso, si se intentara mirar hacia abajo a la izquierda:
+
+```python
+fila + 1
+columna - 1
+```
+
+- El resultado sería:
+
+```python
+3
+-1
+```
+
+- La condición protege el acceso:
+
+```python
+if fila < n - 1 and columna > 0:
+    valor = matriz[fila + 1][columna - 1]
+```
+
+|        | Columna 0    | Columna 1 | Columna 2 |
+| ------ | ------------ | --------- | --------- |
+| Fila 0 | 1 `(0,0)`    | 2 `(0,1)` | 3 `(0,2)` |
+| Fila 1 | 4 `(1,0)`    | 5 `(1,1)` | 6 `(1,2)` |
+| Fila 2 | 🟢 7 `(2,0)` | 8 `(2,1)` | 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación diagonal: mirar hacia abajo a la derecha (1/2)
+
+🟢 Posición actual: `(1, 1)`  
+🔵 Posición inferior derecha: `(2, 2)`  
+  
+```python
+if fila < n - 1 and columna < n - 1:
+    valor = matriz[fila + 1][columna + 1]
+```
+
+| | Columna 0 | Columna 1 | Columna 2 |  
+|--------|-----------|-----------|-----------|  
+| Fila 0 | 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)` |  
+| Fila 1 | 4 `(1,0)` | 🟢 5 `(1,1)` | 6 `(1,2)` |  
+| Fila 2 | 7 `(2,0)` | 8 `(2,1)` | 🔵 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Verificación diagonal: mirar hacia abajo a la derecha (2/2)
+
+- 🟢 Posición actual: `(2, 2)`  
+- 🔵 Posición destino inferior derecha: no existe
+	- ❌ No accesible
+
+- En este caso, la posición actual está en la última fila y en la última columna.
+
+- Por eso, si se intentara mirar hacia abajo a la derecha:
+
+```python
+fila + 1
+columna + 1
+```
+
+- El resultado sería:
+
+```python
+3
+3
+```
+
+- La condición protege el acceso:
+
+```python
+if fila < n - 1 and columna < n - 1:
+    valor = matriz[fila + 1][columna + 1]
+```
+
+|        | Columna 0 | Columna 1 | Columna 2    |
+| ------ | --------- | --------- | ------------ |
+| Fila 0 | 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)`    |
+| Fila 1 | 4 `(1,0)` | 5 `(1,1)` | 6 `(1,2)`    |
+| Fila 2 | 7 `(2,0)` | 8 `(2,1)` | 🟢 9 `(2,2)` |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Pasos generales de validación
+
+1. Calcular la posición destino
+2. Verificar existencia del destino
+	-  **Antes** del acceso
+3. Usar  al destino
+	- Solo si existe
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Regla de oro
+
+- Nunca acceder primero
+- Siempre validar primero
+
+<br>
+
+❌ Incorrecto:
+
+```
+valor = matriz[fila][columna - 1]
+```
+
+✅ Correcto:
+
+```
+if columna > 0:
+    valor = matriz[fila][columna - 1]
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Bordes de la matriz
+
+- 1ra fila:
+	- No hay posiciones arriba
+- Última fila:
+	- No hay posiciones abajo
+
+<br>
+
+- 1ra columna:
+	- No hay posiciones a la izquierda
+- Última columna:
+	- No hay posiciones a la derecha
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Esquinas de la matriz
+
+- Las esquinas tienen menos vecinos
+- Puede no haber vecinos laterales, verticales y diagonales
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Revisando esquinas - Ejemplo esquina superior izquierda (1/3)
+
+- Aquí **NO existe**:
+  - arriba
+  - izquierda
+  - diagonal superior izquierda
+  - diagonal superior derecha
+
+| | Columna 0 | Columna 1 | Columna 2 |
+|--------|-----------|-----------|-----------|
+| Fila 0 | 🟢 1 `(0,0)` | 2 `(0,1)` | 3 `(0,2)` |
+| Fila 1 | 4 `(1,0)` | 5 `(1,1)` | 6 `(1,2)` |
+| Fila 2 | 7 `(2,0)` | 8 `(2,1)` | 9 `(2,2)` |
+
+🟢 Esquina superior izquierda: `(0, 0)`
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Revisando esquinas - Ejemplo esquina superior izquierda (2/3)
+
+| Dirección | Posición que intentaría consultar | ¿Existe? |
+|---|---|---|
+| Arriba | `fila - 1, columna` | ❌ No |
+| Izquierda | `fila, columna - 1` | ❌ No |
+| Superior izquierda | `fila - 1, columna - 1` | ❌ No |
+| Superior derecha | `fila - 1, columna + 1` | ❌ No |
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Revisando esquinas - Ejemplo esquina superior izquierda (3/3)
+
+```python
+# Mirar arriba
+if fila > 0:
+    valor = matriz[fila - 1][columna]
+
+# Mirar izquierda
+if columna > 0:
+    valor = matriz[fila][columna - 1]
+
+# Mirar diagonal superior izquierda
+if fila > 0 and columna > 0:
+    valor = matriz[fila - 1][columna - 1]
+
+# Mirar diagonal superior derecha
+if fila > 0 and columna < n - 1:
+    valor = matriz[fila - 1][columna + 1]
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Error común
+
+- Creer que todas las celdas tienen todos sus adyacentes
+- Eso solo pasa en celdas internas
+- Las celdas del borde tienen menos vecinos
+- Las esquinas tienen todavía menos vecinos
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Mensaje clave
+
+- Recorrer matrices exige controlar límites
+- Cada acceso debe ser seguro
+- Antes de mirar una posición adyacente, se verifica que exista
+- Validar límites evita errores en bordes y esquinas
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### ¿Podría construir una validación general de límites desde un casilla `(fila, columna)`?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="#f8f8f8" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<i class="fas fa-question-circle fa-2x fa-spin fa-4x"></i>
+
+<br>
+<br>
+
+ [<i class="fas fa-home  fa-3x"></i>](https://eerosales24.github.io/iph_2026_10/#)
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":"0.025","minScale":"0.1","maxScale":"2.0","controls":"true","controlsLayout":"bottom-right","progress":"true","slideNumber":"true","center":"false","transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
